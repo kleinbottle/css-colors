@@ -7,11 +7,11 @@ entrypoint = "src/svg-colors.typ"
 authors = ["kleinbottle", "nandac"]
 license = "Unlicense"
 description = "Allows SVG named colors to be used directly in a Typst document "
-homepage = ""
+# homepage = ""
 repository = "https://github.com/kleinbottle/svg-colors"
 keywords = ["named SVG colors"]
-categories = []
-disciplines = []
+categories = ["components"]
+disciplines = ["design", "drawing"]
 compiler = "0.13.0"
 exclude = [
   ".github",
