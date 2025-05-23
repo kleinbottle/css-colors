@@ -1,7 +1,7 @@
-# The `my-package` Package
+# The `svg-colors` Package
 <div align="center">Version 0.1.0</div>
 
-A short description about the project and/or client.
+Enables SVG colors to be used by their names within a Typst document.
 
 ## Template adaptation checklist
 
