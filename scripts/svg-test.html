@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>SVG Colors Table</title>
+  <style>
+    .noto-serif-400 {
+      font-family: "Noto Serif", serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-variation-settings:
+        "wdth" 100;
+    }
+    .noto-serif-600 {
+      font-family: "Noto Serif", serif;
+      font-optical-sizing: auto;
+      font-weight: 600;
+      font-style: normal;
+      font-variation-settings:
+        "wdth" 100;
+    }
+    h1 { text-align: center; }
+    table { border-collapse: collapse; width: 60%; margin: 0 auto; /* Centers the table horizontally */}
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th:nth-child(3), td:nth-child(3), th:nth-child(4), td:nth-child(4) {
+      text-align: center; /* Center-align specific columns */
+    }
+    .swatch { width: 24px; height: 24px; display: inline-block; border: 1px solid #000; }
+    .stripe { width: 100%; height: 16px; }
+  </style>
+</head>
+<body class="noto-serif-400">
+  <h1 class="noto-serif-600">SVG Colors Table</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Hex Value</th>
+        <th>Color Swatch</th>
+        <th>Color Stripe</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>aliceblue</td>
+        <td>#f0f8ff</td>
+        <td><span class="swatch" style="background-color: #f0f8ff;"></span></td>
+        <td><div class="stripe" style="background-color: #f0f8ff;"></div></td>
+      </tr>
+      <tr>
+        <td>antiquewhite</td>
+        <td>#faebd7</td>
+        <td><span class="swatch" style="background-color: #faebd7;"></span></td>
+        <td><div class="stripe" style="background-color: #faebd7;"></div></td>
+      </tr>
+      <tr>
+        <td>aqua</td>
+        <td>#00ffff</td>
+        <td><span class="swatch" style="background-color: #00ffff;"></span></td>
+        <td><div class="stripe" style="background-color: #00ffff;"></div></td>
+      </tr>
+      <tr>
+        <td>aquamarine</td>
+        <td>#7fffd4</td>
+        <td><span class="swatch" style="background-color: #7fffd4;"></span></td>
+        <td><div class="stripe" style="background-color: #7fffd4;"></div></td>
+      </tr>
+      <tr>
+        <td>azure</td>
+        <td>#f0ffff</td>
+        <td><span class="swatch" style="background-color: #f0ffff;"></span></td>
+        <td><div class="stripe" style="background-color: #f0ffff;"></div></td>
+      </tr>
+      <tr>
+        <td>beige</td>
+        <td>#f5f5dc</td>
+        <td><span class="swatch" style="background-color: #f5f5dc;"></span></td>
+        <td><div class="stripe" style="background-color: #f5f5dc;"></div></td>
+      </tr>
+      <tr>
+        <td>bisque</td>
+        <td>#ffe4c4</td>
+        <td><span class="swatch" style="background-color: #ffe4c4;"></span></td>
+        <td><div class="stripe" style="background-color: #ffe4c4;"></div></td>
+      </tr>
+      <tr>
+        <td>black</td>
+        <td>#000000</td>
+        <td><span class="swatch" style="background-color: #000000;"></span></td>
+        <td><div class="stripe" style="background-color: #000000;"></div></td>
+      </tr>
+      <tr>
+        <td>blanchedalmond</td>
+        <td>#ffebcd</td>
+        <td><span class="swatch" style="background-color: #ffebcd;"></span></td>
+        <td><div class="stripe" style="background-color: #ffebcd;"></div></td>
+      </tr>
+      <tr>
+        <td>blue</td>
+        <td>#0000ff</td>
+        <td><span class="swatch" style="background-color: #0000ff;"></span></td>
+        <td><div class="stripe" style="background-color: #0000ff;"></div></td>
+      </tr>
+      <tr>
+        <td>blueviolet</td>
+        <td>#8a2be2</td>
+        <td><span class="swatch" style="background-color: #8a2be2;"></span></td>
+        <td><div class="stripe" style="background-color: #8a2be2;"></div></td>
+      </tr>
+      <tr>
+        <td>brown</td>
+        <td>#a52a2a</td>
+        <td><span class="swatch" style="background-color: #a52a2a;"></span></td>
+        <td><div class="stripe" style="background-color: #a52a2a;"></div></td>
+      </tr>
+      <tr>
+        <td>burlywood</td>
+        <td>#deb887</td>
+        <td><span class="swatch" style="background-color: #deb887;"></span></td>
+        <td><div class="stripe" style="background-color: #deb887;"></div></td>
+      </tr>
+      <tr>
+        <td>cadetblue</td>
+        <td>#5f9ea0</td>
+        <td><span class="swatch" style="background-color: #5f9ea0;"></span></td>
+        <td><div class="stripe" style="background-color: #5f9ea0;"></div></td>
+      </tr>
+      <tr>
+        <td>chartreuse</td>
+        <td>#7fff00</td>
+        <td><span class="swatch" style="background-color: #7fff00;"></span></td>
+        <td><div class="stripe" style="background-color: #7fff00;"></div></td>
+      </tr>
+      <tr>
+        <td>chocolate</td>
+        <td>#d2691e</td>
+        <td><span class="swatch" style="background-color: #d2691e;"></span></td>
+        <td><div class="stripe" style="background-color: #d2691e;"></div></td>
+      </tr>
+      <tr>
+        <td>coral</td>
+        <td>#ff7f50</td>
+        <td><span class="swatch" style="background-color: #ff7f50;"></span></td>
+        <td><div class="stripe" style="background-color: #ff7f50;"></div></td>
+      </tr>
+      <tr>
+        <td>cornflowerblue</td>
+        <td>#6495ed</td>
+        <td><span class="swatch" style="background-color: #6495ed;"></span></td>
+        <td><div class="stripe" style="background-color: #6495ed;"></div></td>
+      </tr>
+      <tr>
+        <td>cornsilk</td>
+        <td>#fff8dc</td>
+        <td><span class="swatch" style="background-color: #fff8dc;"></span></td>
+        <td><div class="stripe" style="background-color: #fff8dc;"></div></td>
+      </tr>
+      <tr>
+        <td>crimson</td>
+        <td>#dc143c</td>
+        <td><span class="swatch" style="background-color: #dc143c;"></span></td>
+        <td><div class="stripe" style="background-color: #dc143c;"></div></td>
+      </tr>
+      <tr>
+        <td>cyan</td>
+        <td>#00ffff</td>
+        <td><span class="swatch" style="background-color: #00ffff;"></span></td>
+        <td><div class="stripe" style="background-color: #00ffff;"></div></td>
+      </tr>
+      <tr>
+        <td>darkblue</td>
+        <td>#00008b</td>
+        <td><span class="swatch" style="background-color: #00008b;"></span></td>
+        <td><div class="stripe" style="background-color: #00008b;"></div></td>
+      </tr>
+      <tr>
+        <td>darkcyan</td>
+        <td>#008b8b</td>
+        <td><span class="swatch" style="background-color: #008b8b;"></span></td>
+        <td><div class="stripe" style="background-color: #008b8b;"></div></td>
+      </tr>
+      <tr>
+        <td>darkgoldenrod</td>
+        <td>#b8860b</td>
+        <td><span class="swatch" style="background-color: #b8860b;"></span></td>
+        <td><div class="stripe" style="background-color: #b8860b;"></div></td>
+      </tr>
+      <tr>
+        <td>darkgray</td>
+        <td>#a9a9a9</td>
+        <td><span class="swatch" style="background-color: #a9a9a9;"></span></td>
+        <td><div class="stripe" style="background-color: #a9a9a9;"></div></td>
+      </tr>
+      <tr>
+        <td>darkgreen</td>
+        <td>#006400</td>
+        <td><span class="swatch" style="background-color: #006400;"></span></td>
+        <td><div class="stripe" style="background-color: #006400;"></div></td>
+      </tr>
+      <tr>
+        <td>darkgrey</td>
+        <td>#a9a9a9</td>
+        <td><span class="swatch" style="background-color: #a9a9a9;"></span></td>
+        <td><div class="stripe" style="background-color: #a9a9a9;"></div></td>
+      </tr>
+      <tr>
+        <td>darkkhaki</td>
+        <td>#bdb76b</td>
+        <td><span class="swatch" style="background-color: #bdb76b;"></span></td>
+        <td><div class="stripe" style="background-color: #bdb76b;"></div></td>
+      </tr>
+      <tr>
+        <td>darkmagenta</td>
+        <td>#8b008b</td>
+        <td><span class="swatch" style="background-color: #8b008b;"></span></td>
+        <td><div class="stripe" style="background-color: #8b008b;"></div></td>
+      </tr>
+      <tr>
+        <td>darkolivegreen</td>
+        <td>#556b2f</td>
+        <td><span class="swatch" style="background-color: #556b2f;"></span></td>
+        <td><div class="stripe" style="background-color: #556b2f;"></div></td>
+      </tr>
+      <tr>
+        <td>darkorange</td>
+        <td>#ff8c00</td>
+        <td><span class="swatch" style="background-color: #ff8c00;"></span></td>
+        <td><div class="stripe" style="background-color: #ff8c00;"></div></td>
+      </tr>
+      <tr>
+        <td>darkorchid</td>
+        <td>#9932cc</td>
+        <td><span class="swatch" style="background-color: #9932cc;"></span></td>
+        <td><div class="stripe" style="background-color: #9932cc;"></div></td>
+      </tr>
+      <tr>
+        <td>darkred</td>
+        <td>#8b0000</td>
+        <td><span class="swatch" style="background-color: #8b0000;"></span></td>
+        <td><div class="stripe" style="background-color: #8b0000;"></div></td>
+      </tr>
+      <tr>
+        <td>darksalmon</td>
+        <td>#e9967a</td>
+        <td><span class="swatch" style="background-color: #e9967a;"></span></td>
+        <td><div class="stripe" style="background-color: #e9967a;"></div></td>
+      </tr>
+      <tr>
+        <td>darkseagreen</td>
+        <td>#8fbc8f</td>
+        <td><span class="swatch" style="background-color: #8fbc8f;"></span></td>
+        <td><div class="stripe" style="background-color: #8fbc8f;"></div></td>
+      </tr>
+      <tr>
+        <td>darkslateblue</td>
+        <td>#483d8b</td>
+        <td><span class="swatch" style="background-color: #483d8b;"></span></td>
+        <td><div class="stripe" style="background-color: #483d8b;"></div></td>
+      </tr>
+      <tr>
+        <td>darkslategray</td>
+        <td>#2f4f4f</td>
+        <td><span class="swatch" style="background-color: #2f4f4f;"></span></td>
+        <td><div class="stripe" style="background-color: #2f4f4f;"></div></td>
+      </tr>
+      <tr>
+        <td>darkslategrey</td>
+        <td>#2f4f4f</td>
+        <td><span class="swatch" style="background-color: #2f4f4f;"></span></td>
+        <td><div class="stripe" style="background-color: #2f4f4f;"></div></td>
+      </tr>
+      <tr>
+        <td>darkturquoise</td>
+        <td>#00ced1</td>
+        <td><span class="swatch" style="background-color: #00ced1;"></span></td>
+        <td><div class="stripe" style="background-color: #00ced1;"></div></td>
+      </tr>
+      <tr>
+        <td>darkviolet</td>
+        <td>#9400d3</td>
+        <td><span class="swatch" style="background-color: #9400d3;"></span></td>
+        <td><div class="stripe" style="background-color: #9400d3;"></div></td>
+      </tr>
+      <tr>
+        <td>deeppink</td>
+        <td>#ff1493</td>
+        <td><span class="swatch" style="background-color: #ff1493;"></span></td>
+        <td><div class="stripe" style="background-color: #ff1493;"></div></td>
+      </tr>
+      <tr>
+        <td>deepskyblue</td>
+        <td>#00bfff</td>
+        <td><span class="swatch" style="background-color: #00bfff;"></span></td>
+        <td><div class="stripe" style="background-color: #00bfff;"></div></td>
+      </tr>
+      <tr>
+        <td>dimgray</td>
+        <td>#696969</td>
+        <td><span class="swatch" style="background-color: #696969;"></span></td>
+        <td><div class="stripe" style="background-color: #696969;"></div></td>
+      </tr>
+      <tr>
+        <td>dimgrey</td>
+        <td>#696969</td>
+        <td><span class="swatch" style="background-color: #696969;"></span></td>
+        <td><div class="stripe" style="background-color: #696969;"></div></td>
+      </tr>
+      <tr>
+        <td>dodgerblue</td>
+        <td>#1e90ff</td>
+        <td><span class="swatch" style="background-color: #1e90ff;"></span></td>
+        <td><div class="stripe" style="background-color: #1e90ff;"></div></td>
+      </tr>
+      <tr>
+        <td>firebrick</td>
+        <td>#b22222</td>
+        <td><span class="swatch" style="background-color: #b22222;"></span></td>
+        <td><div class="stripe" style="background-color: #b22222;"></div></td>
+      </tr>
+      <tr>
+        <td>floralwhite</td>
+        <td>#fffaf0</td>
+        <td><span class="swatch" style="background-color: #fffaf0;"></span></td>
+        <td><div class="stripe" style="background-color: #fffaf0;"></div></td>
+      </tr>
+      <tr>
+        <td>forestgreen</td>
+        <td>#228b22</td>
+        <td><span class="swatch" style="background-color: #228b22;"></span></td>
+        <td><div class="stripe" style="background-color: #228b22;"></div></td>
+      </tr>
+      <tr>
+        <td>fuchsia</td>
+        <td>#ff00ff</td>
+        <td><span class="swatch" style="background-color: #ff00ff;"></span></td>
+        <td><div class="stripe" style="background-color: #ff00ff;"></div></td>
+      </tr>
+      <tr>
+        <td>gainsboro</td>
+        <td>#dcdcdc</td>
+        <td><span class="swatch" style="background-color: #dcdcdc;"></span></td>
+        <td><div class="stripe" style="background-color: #dcdcdc;"></div></td>
+      </tr>
+      <tr>
+        <td>ghostwhite</td>
+        <td>#f8f8ff</td>
+        <td><span class="swatch" style="background-color: #f8f8ff;"></span></td>
+        <td><div class="stripe" style="background-color: #f8f8ff;"></div></td>
+      </tr>
+      <tr>
+        <td>gold</td>
+        <td>#ffd700</td>
+        <td><span class="swatch" style="background-color: #ffd700;"></span></td>
+        <td><div class="stripe" style="background-color: #ffd700;"></div></td>
+      </tr>
+      <tr>
+        <td>goldenrod</td>
+        <td>#daa520</td>
+        <td><span class="swatch" style="background-color: #daa520;"></span></td>
+        <td><div class="stripe" style="background-color: #daa520;"></div></td>
+      </tr>
+      <tr>
+        <td>gray</td>
+        <td>#808080</td>
+        <td><span class="swatch" style="background-color: #808080;"></span></td>
+        <td><div class="stripe" style="background-color: #808080;"></div></td>
+      </tr>
+      <tr>
+        <td>green</td>
+        <td>#008000</td>
+        <td><span class="swatch" style="background-color: #008000;"></span></td>
+        <td><div class="stripe" style="background-color: #008000;"></div></td>
+      </tr>
+      <tr>
+        <td>greenyellow</td>
+        <td>#adff2f</td>
+        <td><span class="swatch" style="background-color: #adff2f;"></span></td>
+        <td><div class="stripe" style="background-color: #adff2f;"></div></td>
+      </tr>
+      <tr>
+        <td>grey</td>
+        <td>#808080</td>
+        <td><span class="swatch" style="background-color: #808080;"></span></td>
+        <td><div class="stripe" style="background-color: #808080;"></div></td>
+      </tr>
+      <tr>
+        <td>honeydew</td>
+        <td>#f0fff0</td>
+        <td><span class="swatch" style="background-color: #f0fff0;"></span></td>
+        <td><div class="stripe" style="background-color: #f0fff0;"></div></td>
+      </tr>
+      <tr>
+        <td>hotpink</td>
+        <td>#ff69b4</td>
+        <td><span class="swatch" style="background-color: #ff69b4;"></span></td>
+        <td><div class="stripe" style="background-color: #ff69b4;"></div></td>
+      </tr>
+      <tr>
+        <td>indianred</td>
+        <td>#cd5c5c</td>
+        <td><span class="swatch" style="background-color: #cd5c5c;"></span></td>
+        <td><div class="stripe" style="background-color: #cd5c5c;"></div></td>
+      </tr>
+      <tr>
+        <td>indigo</td>
+        <td>#4b0082</td>
+        <td><span class="swatch" style="background-color: #4b0082;"></span></td>
+        <td><div class="stripe" style="background-color: #4b0082;"></div></td>
+      </tr>
+      <tr>
+        <td>ivory</td>
+        <td>#fffff0</td>
+        <td><span class="swatch" style="background-color: #fffff0;"></span></td>
+        <td><div class="stripe" style="background-color: #fffff0;"></div></td>
+      </tr>
+      <tr>
+        <td>khaki</td>
+        <td>#f0e68c</td>
+        <td><span class="swatch" style="background-color: #f0e68c;"></span></td>
+        <td><div class="stripe" style="background-color: #f0e68c;"></div></td>
+      </tr>
+      <tr>
+        <td>lavender</td>
+        <td>#e6e6fa</td>
+        <td><span class="swatch" style="background-color: #e6e6fa;"></span></td>
+        <td><div class="stripe" style="background-color: #e6e6fa;"></div></td>
+      </tr>
+      <tr>
+        <td>lavenderblush</td>
+        <td>#fff0f5</td>
+        <td><span class="swatch" style="background-color: #fff0f5;"></span></td>
+        <td><div class="stripe" style="background-color: #fff0f5;"></div></td>
+      </tr>
+      <tr>
+        <td>lawngreen</td>
+        <td>#7cfc00</td>
+        <td><span class="swatch" style="background-color: #7cfc00;"></span></td>
+        <td><div class="stripe" style="background-color: #7cfc00;"></div></td>
+      </tr>
+      <tr>
+        <td>lemonchiffon</td>
+        <td>#fffacd</td>
+        <td><span class="swatch" style="background-color: #fffacd;"></span></td>
+        <td><div class="stripe" style="background-color: #fffacd;"></div></td>
+      </tr>
+      <tr>
+        <td>lightblue</td>
+        <td>#add8e6</td>
+        <td><span class="swatch" style="background-color: #add8e6;"></span></td>
+        <td><div class="stripe" style="background-color: #add8e6;"></div></td>
+      </tr>
+      <tr>
+        <td>lightcoral</td>
+        <td>#f08080</td>
+        <td><span class="swatch" style="background-color: #f08080;"></span></td>
+        <td><div class="stripe" style="background-color: #f08080;"></div></td>
+      </tr>
+      <tr>
+        <td>lightcyan</td>
+        <td>#e0ffff</td>
+        <td><span class="swatch" style="background-color: #e0ffff;"></span></td>
+        <td><div class="stripe" style="background-color: #e0ffff;"></div></td>
+      </tr>
+      <tr>
+        <td>lightgoldenrodyellow</td>
+        <td>#fafad2</td>
+        <td><span class="swatch" style="background-color: #fafad2;"></span></td>
+        <td><div class="stripe" style="background-color: #fafad2;"></div></td>
+      </tr>
+      <tr>
+        <td>lightgray</td>
+        <td>#d3d3d3</td>
+        <td><span class="swatch" style="background-color: #d3d3d3;"></span></td>
+        <td><div class="stripe" style="background-color: #d3d3d3;"></div></td>
+      </tr>
+      <tr>
+        <td>lightgreen</td>
+        <td>#90ee90</td>
+        <td><span class="swatch" style="background-color: #90ee90;"></span></td>
+        <td><div class="stripe" style="background-color: #90ee90;"></div></td>
+      </tr>
+      <tr>
+        <td>lightgrey</td>
+        <td>#d3d3d3</td>
+        <td><span class="swatch" style="background-color: #d3d3d3;"></span></td>
+        <td><div class="stripe" style="background-color: #d3d3d3;"></div></td>
+      </tr>
+      <tr>
+        <td>lightpink</td>
+        <td>#ffb6c1</td>
+        <td><span class="swatch" style="background-color: #ffb6c1;"></span></td>
+        <td><div class="stripe" style="background-color: #ffb6c1;"></div></td>
+      </tr>
+      <tr>
+        <td>lightsalmon</td>
+        <td>#ffa07a</td>
+        <td><span class="swatch" style="background-color: #ffa07a;"></span></td>
+        <td><div class="stripe" style="background-color: #ffa07a;"></div></td>
+      </tr>
+      <tr>
+        <td>lightseagreen</td>
+        <td>#20b2aa</td>
+        <td><span class="swatch" style="background-color: #20b2aa;"></span></td>
+        <td><div class="stripe" style="background-color: #20b2aa;"></div></td>
+      </tr>
+      <tr>
+        <td>lightskyblue</td>
+        <td>#87cefa</td>
+        <td><span class="swatch" style="background-color: #87cefa;"></span></td>
+        <td><div class="stripe" style="background-color: #87cefa;"></div></td>
+      </tr>
+      <tr>
+        <td>lightslategray</td>
+        <td>#778899</td>
+        <td><span class="swatch" style="background-color: #778899;"></span></td>
+        <td><div class="stripe" style="background-color: #778899;"></div></td>
+      </tr>
+      <tr>
+        <td>lightslategrey</td>
+        <td>#778899</td>
+        <td><span class="swatch" style="background-color: #778899;"></span></td>
+        <td><div class="stripe" style="background-color: #778899;"></div></td>
+      </tr>
+      <tr>
+        <td>lightsteelblue</td>
+        <td>#b0c4de</td>
+        <td><span class="swatch" style="background-color: #b0c4de;"></span></td>
+        <td><div class="stripe" style="background-color: #b0c4de;"></div></td>
+      </tr>
+      <tr>
+        <td>lightyellow</td>
+        <td>#ffffe0</td>
+        <td><span class="swatch" style="background-color: #ffffe0;"></span></td>
+        <td><div class="stripe" style="background-color: #ffffe0;"></div></td>
+      </tr>
+      <tr>
+        <td>lime</td>
+        <td>#00ff00</td>
+        <td><span class="swatch" style="background-color: #00ff00;"></span></td>
+        <td><div class="stripe" style="background-color: #00ff00;"></div></td>
+      </tr>
+      <tr>
+        <td>limegreen</td>
+        <td>#32cd32</td>
+        <td><span class="swatch" style="background-color: #32cd32;"></span></td>
+        <td><div class="stripe" style="background-color: #32cd32;"></div></td>
+      </tr>
+      <tr>
+        <td>linen</td>
+        <td>#faf0e6</td>
+        <td><span class="swatch" style="background-color: #faf0e6;"></span></td>
+        <td><div class="stripe" style="background-color: #faf0e6;"></div></td>
+      </tr>
+      <tr>
+        <td>magenta</td>
+        <td>#ff00ff</td>
+        <td><span class="swatch" style="background-color: #ff00ff;"></span></td>
+        <td><div class="stripe" style="background-color: #ff00ff;"></div></td>
+      </tr>
+      <tr>
+        <td>maroon</td>
+        <td>#800000</td>
+        <td><span class="swatch" style="background-color: #800000;"></span></td>
+        <td><div class="stripe" style="background-color: #800000;"></div></td>
+      </tr>
+      <tr>
+        <td>mediumaquamarine</td>
+        <td>#66cdaa</td>
+        <td><span class="swatch" style="background-color: #66cdaa;"></span></td>
+        <td><div class="stripe" style="background-color: #66cdaa;"></div></td>
+      </tr>
+      <tr>
+        <td>mediumblue</td>
+        <td>#0000cd</td>
+        <td><span class="swatch" style="background-color: #0000cd;"></span></td>
+        <td><div class="stripe" style="background-color: #0000cd;"></div></td>
+      </tr>
+      <tr>
+        <td>mediumorchid</td>
+        <td>#ba55d3</td>
+        <td><span class="swatch" style="background-color: #ba55d3;"></span></td>
+        <td><div class="stripe" style="background-color: #ba55d3;"></div></td>
+      </tr>
+      <tr>
+        <td>mediumpurple</td>
+        <td>#9370db</td>
+        <td><span class="swatch" style="background-color: #9370db;"></span></td>
+        <td><div class="stripe" style="background-color: #9370db;"></div></td>
+      </tr>
+      <tr>
+        <td>mediumseagreen</td>
+        <td>#3cb371</td>
+        <td><span class="swatch" style="background-color: #3cb371;"></span></td>
+        <td><div class="stripe" style="background-color: #3cb371;"></div></td>
+      </tr>
+      <tr>
+        <td>mediumslateblue</td>
+        <td>#7b68ee</td>
+        <td><span class="swatch" style="background-color: #7b68ee;"></span></td>
+        <td><div class="stripe" style="background-color: #7b68ee;"></div></td>
+      </tr>
+      <tr>
+        <td>mediumspringgreen</td>
+        <td>#00fa9a</td>
+        <td><span class="swatch" style="background-color: #00fa9a;"></span></td>
+        <td><div class="stripe" style="background-color: #00fa9a;"></div></td>
+      </tr>
+      <tr>
+        <td>mediumturquoise</td>
+        <td>#48d1cc</td>
+        <td><span class="swatch" style="background-color: #48d1cc;"></span></td>
+        <td><div class="stripe" style="background-color: #48d1cc;"></div></td>
+      </tr>
+      <tr>
+        <td>mediumvioletred</td>
+        <td>#c71585</td>
+        <td><span class="swatch" style="background-color: #c71585;"></span></td>
+        <td><div class="stripe" style="background-color: #c71585;"></div></td>
+      </tr>
+      <tr>
+        <td>midnightblue</td>
+        <td>#191970</td>
+        <td><span class="swatch" style="background-color: #191970;"></span></td>
+        <td><div class="stripe" style="background-color: #191970;"></div></td>
+      </tr>
+      <tr>
+        <td>mintcream</td>
+        <td>#f5fffa</td>
+        <td><span class="swatch" style="background-color: #f5fffa;"></span></td>
+        <td><div class="stripe" style="background-color: #f5fffa;"></div></td>
+      </tr>
+      <tr>
+        <td>mistyrose</td>
+        <td>#ffe4e1</td>
+        <td><span class="swatch" style="background-color: #ffe4e1;"></span></td>
+        <td><div class="stripe" style="background-color: #ffe4e1;"></div></td>
+      </tr>
+      <tr>
+        <td>moccasin</td>
+        <td>#ffe4b5</td>
+        <td><span class="swatch" style="background-color: #ffe4b5;"></span></td>
+        <td><div class="stripe" style="background-color: #ffe4b5;"></div></td>
+      </tr>
+      <tr>
+        <td>navajowhite</td>
+        <td>#ffdead</td>
+        <td><span class="swatch" style="background-color: #ffdead;"></span></td>
+        <td><div class="stripe" style="background-color: #ffdead;"></div></td>
+      </tr>
+      <tr>
+        <td>navy</td>
+        <td>#000080</td>
+        <td><span class="swatch" style="background-color: #000080;"></span></td>
+        <td><div class="stripe" style="background-color: #000080;"></div></td>
+      </tr>
+      <tr>
+        <td>oldlace</td>
+        <td>#fdf5e6</td>
+        <td><span class="swatch" style="background-color: #fdf5e6;"></span></td>
+        <td><div class="stripe" style="background-color: #fdf5e6;"></div></td>
+      </tr>
+      <tr>
+        <td>olive</td>
+        <td>#808000</td>
+        <td><span class="swatch" style="background-color: #808000;"></span></td>
+        <td><div class="stripe" style="background-color: #808000;"></div></td>
+      </tr>
+      <tr>
+        <td>olivedrab</td>
+        <td>#6b8e23</td>
+        <td><span class="swatch" style="background-color: #6b8e23;"></span></td>
+        <td><div class="stripe" style="background-color: #6b8e23;"></div></td>
+      </tr>
+      <tr>
+        <td>orange</td>
+        <td>#ffa500</td>
+        <td><span class="swatch" style="background-color: #ffa500;"></span></td>
+        <td><div class="stripe" style="background-color: #ffa500;"></div></td>
+      </tr>
+      <tr>
+        <td>orangered</td>
+        <td>#ff4500</td>
+        <td><span class="swatch" style="background-color: #ff4500;"></span></td>
+        <td><div class="stripe" style="background-color: #ff4500;"></div></td>
+      </tr>
+      <tr>
+        <td>orchid</td>
+        <td>#da70d6</td>
+        <td><span class="swatch" style="background-color: #da70d6;"></span></td>
+        <td><div class="stripe" style="background-color: #da70d6;"></div></td>
+      </tr>
+      <tr>
+        <td>palegoldenrod</td>
+        <td>#eee8aa</td>
+        <td><span class="swatch" style="background-color: #eee8aa;"></span></td>
+        <td><div class="stripe" style="background-color: #eee8aa;"></div></td>
+      </tr>
+      <tr>
+        <td>palegreen</td>
+        <td>#98fb98</td>
+        <td><span class="swatch" style="background-color: #98fb98;"></span></td>
+        <td><div class="stripe" style="background-color: #98fb98;"></div></td>
+      </tr>
+      <tr>
+        <td>paleturquoise</td>
+        <td>#afeeee</td>
+        <td><span class="swatch" style="background-color: #afeeee;"></span></td>
+        <td><div class="stripe" style="background-color: #afeeee;"></div></td>
+      </tr>
+      <tr>
+        <td>palevioletred</td>
+        <td>#db7093</td>
+        <td><span class="swatch" style="background-color: #db7093;"></span></td>
+        <td><div class="stripe" style="background-color: #db7093;"></div></td>
+      </tr>
+      <tr>
+        <td>papayawhip</td>
+        <td>#ffefd5</td>
+        <td><span class="swatch" style="background-color: #ffefd5;"></span></td>
+        <td><div class="stripe" style="background-color: #ffefd5;"></div></td>
+      </tr>
+      <tr>
+        <td>peachpuff</td>
+        <td>#ffdab9</td>
+        <td><span class="swatch" style="background-color: #ffdab9;"></span></td>
+        <td><div class="stripe" style="background-color: #ffdab9;"></div></td>
+      </tr>
+      <tr>
+        <td>peru</td>
+        <td>#cd853f</td>
+        <td><span class="swatch" style="background-color: #cd853f;"></span></td>
+        <td><div class="stripe" style="background-color: #cd853f;"></div></td>
+      </tr>
+      <tr>
+        <td>pink</td>
+        <td>#ffc0cb</td>
+        <td><span class="swatch" style="background-color: #ffc0cb;"></span></td>
+        <td><div class="stripe" style="background-color: #ffc0cb;"></div></td>
+      </tr>
+      <tr>
+        <td>plum</td>
+        <td>#dda0dd</td>
+        <td><span class="swatch" style="background-color: #dda0dd;"></span></td>
+        <td><div class="stripe" style="background-color: #dda0dd;"></div></td>
+      </tr>
+      <tr>
+        <td>powderblue</td>
+        <td>#b0e0e6</td>
+        <td><span class="swatch" style="background-color: #b0e0e6;"></span></td>
+        <td><div class="stripe" style="background-color: #b0e0e6;"></div></td>
+      </tr>
+      <tr>
+        <td>purple</td>
+        <td>#800080</td>
+        <td><span class="swatch" style="background-color: #800080;"></span></td>
+        <td><div class="stripe" style="background-color: #800080;"></div></td>
+      </tr>
+      <tr>
+        <td>red</td>
+        <td>#ff0000</td>
+        <td><span class="swatch" style="background-color: #ff0000;"></span></td>
+        <td><div class="stripe" style="background-color: #ff0000;"></div></td>
+      </tr>
+      <tr>
+        <td>rosybrown</td>
+        <td>#bc8f8f</td>
+        <td><span class="swatch" style="background-color: #bc8f8f;"></span></td>
+        <td><div class="stripe" style="background-color: #bc8f8f;"></div></td>
+      </tr>
+      <tr>
+        <td>royalblue</td>
+        <td>#4169e1</td>
+        <td><span class="swatch" style="background-color: #4169e1;"></span></td>
+        <td><div class="stripe" style="background-color: #4169e1;"></div></td>
+      </tr>
+      <tr>
+        <td>saddlebrown</td>
+        <td>#8b4513</td>
+        <td><span class="swatch" style="background-color: #8b4513;"></span></td>
+        <td><div class="stripe" style="background-color: #8b4513;"></div></td>
+      </tr>
+      <tr>
+        <td>salmon</td>
+        <td>#fa8072</td>
+        <td><span class="swatch" style="background-color: #fa8072;"></span></td>
+        <td><div class="stripe" style="background-color: #fa8072;"></div></td>
+      </tr>
+      <tr>
+        <td>sandybrown</td>
+        <td>#f4a460</td>
+        <td><span class="swatch" style="background-color: #f4a460;"></span></td>
+        <td><div class="stripe" style="background-color: #f4a460;"></div></td>
+      </tr>
+      <tr>
+        <td>seagreen</td>
+        <td>#2e8b57</td>
+        <td><span class="swatch" style="background-color: #2e8b57;"></span></td>
+        <td><div class="stripe" style="background-color: #2e8b57;"></div></td>
+      </tr>
+      <tr>
+        <td>seashell</td>
+        <td>#fff5ee</td>
+        <td><span class="swatch" style="background-color: #fff5ee;"></span></td>
+        <td><div class="stripe" style="background-color: #fff5ee;"></div></td>
+      </tr>
+      <tr>
+        <td>sienna</td>
+        <td>#a0522d</td>
+        <td><span class="swatch" style="background-color: #a0522d;"></span></td>
+        <td><div class="stripe" style="background-color: #a0522d;"></div></td>
+      </tr>
+      <tr>
+        <td>silver</td>
+        <td>#c0c0c0</td>
+        <td><span class="swatch" style="background-color: #c0c0c0;"></span></td>
+        <td><div class="stripe" style="background-color: #c0c0c0;"></div></td>
+      </tr>
+      <tr>
+        <td>skyblue</td>
+        <td>#87ceeb</td>
+        <td><span class="swatch" style="background-color: #87ceeb;"></span></td>
+        <td><div class="stripe" style="background-color: #87ceeb;"></div></td>
+      </tr>
+      <tr>
+        <td>slateblue</td>
+        <td>#6a5acd</td>
+        <td><span class="swatch" style="background-color: #6a5acd;"></span></td>
+        <td><div class="stripe" style="background-color: #6a5acd;"></div></td>
+      </tr>
+      <tr>
+        <td>slategray</td>
+        <td>#708090</td>
+        <td><span class="swatch" style="background-color: #708090;"></span></td>
+        <td><div class="stripe" style="background-color: #708090;"></div></td>
+      </tr>
+      <tr>
+        <td>slategrey</td>
+        <td>#708090</td>
+        <td><span class="swatch" style="background-color: #708090;"></span></td>
+        <td><div class="stripe" style="background-color: #708090;"></div></td>
+      </tr>
+      <tr>
+        <td>snow</td>
+        <td>#fffafa</td>
+        <td><span class="swatch" style="background-color: #fffafa;"></span></td>
+        <td><div class="stripe" style="background-color: #fffafa;"></div></td>
+      </tr>
+      <tr>
+        <td>springgreen</td>
+        <td>#00ff7f</td>
+        <td><span class="swatch" style="background-color: #00ff7f;"></span></td>
+        <td><div class="stripe" style="background-color: #00ff7f;"></div></td>
+      </tr>
+      <tr>
+        <td>steelblue</td>
+        <td>#4682b4</td>
+        <td><span class="swatch" style="background-color: #4682b4;"></span></td>
+        <td><div class="stripe" style="background-color: #4682b4;"></div></td>
+      </tr>
+      <tr>
+        <td>tan</td>
+        <td>#d2b48c</td>
+        <td><span class="swatch" style="background-color: #d2b48c;"></span></td>
+        <td><div class="stripe" style="background-color: #d2b48c;"></div></td>
+      </tr>
+      <tr>
+        <td>teal</td>
+        <td>#008080</td>
+        <td><span class="swatch" style="background-color: #008080;"></span></td>
+        <td><div class="stripe" style="background-color: #008080;"></div></td>
+      </tr>
+      <tr>
+        <td>thistle</td>
+        <td>#d8bfd8</td>
+        <td><span class="swatch" style="background-color: #d8bfd8;"></span></td>
+        <td><div class="stripe" style="background-color: #d8bfd8;"></div></td>
+      </tr>
+      <tr>
+        <td>tomato</td>
+        <td>#ff6347</td>
+        <td><span class="swatch" style="background-color: #ff6347;"></span></td>
+        <td><div class="stripe" style="background-color: #ff6347;"></div></td>
+      </tr>
+      <tr>
+        <td>turquoise</td>
+        <td>#40e0d0</td>
+        <td><span class="swatch" style="background-color: #40e0d0;"></span></td>
+        <td><div class="stripe" style="background-color: #40e0d0;"></div></td>
+      </tr>
+      <tr>
+        <td>violet</td>
+        <td>#ee82ee</td>
+        <td><span class="swatch" style="background-color: #ee82ee;"></span></td>
+        <td><div class="stripe" style="background-color: #ee82ee;"></div></td>
+      </tr>
+      <tr>
+        <td>wheat</td>
+        <td>#f5deb3</td>
+        <td><span class="swatch" style="background-color: #f5deb3;"></span></td>
+        <td><div class="stripe" style="background-color: #f5deb3;"></div></td>
+      </tr>
+      <tr>
+        <td>white</td>
+        <td>#ffffff</td>
+        <td><span class="swatch" style="background-color: #ffffff;"></span></td>
+        <td><div class="stripe" style="background-color: #ffffff;"></div></td>
+      </tr>
+      <tr>
+        <td>whitesmoke</td>
+        <td>#f5f5f5</td>
+        <td><span class="swatch" style="background-color: #f5f5f5;"></span></td>
+        <td><div class="stripe" style="background-color: #f5f5f5;"></div></td>
+      </tr>
+      <tr>
+        <td>yellow</td>
+        <td>#ffff00</td>
+        <td><span class="swatch" style="background-color: #ffff00;"></span></td>
+        <td><div class="stripe" style="background-color: #ffff00;"></div></td>
+      </tr>
+      <tr>
+        <td>yellowgreen</td>
+        <td>#9acd32</td>
+        <td><span class="swatch" style="background-color: #9acd32;"></span></td>
+        <td><div class="stripe" style="background-color: #9acd32;"></div></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

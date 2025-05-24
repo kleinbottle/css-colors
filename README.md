@@ -30,10 +30,9 @@ Enables SVG colors to be used by their names within a Typst document.
 These instructions will get you a copy of the project up and running on the typst web app. Perhaps a short code example on importing the package and a very simple teaser usage.
 
 ```typ
-#import "@preview/my-package:0.1.0": *
+#import "@preview/svg-colors:0.1.0": svg
 
-#show: my-show-rule.with()
-#my-func()
+rect(fill: svg.darkorchid)
 ```
 
 <picture>
