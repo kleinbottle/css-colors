@@ -2,6 +2,10 @@
 #set page(margin: 25mm)
 #set text(size: 11pt, font: "Noto Serif")
 
+//Customize appearance
+#show raw: set text(font: "Fira Mono", size: 11pt)
+#show link: set text(fill: blue)
+
 // Text Element configuration
 #show heading.where(level: 1): h1 => {
     set block(above: 2em, below: 1.5em)
@@ -21,8 +25,6 @@
     h3
   }
 
-#show link: set text(fill: blue)
-
 // End of setup
 
 = CSS Colors Module
@@ -31,29 +33,41 @@
 
 The #link("https://en.wikipedia.org/wiki/X11_color_names")[X11 color names], developed in the 1980s, included a file named `rgb.txt` that was shipped with every #link("https://en.wikipedia.org/wiki/X_Window_System")[X11] installation. It mapped over 400 color names to specific RGB values. This list was used in Unix-based systems to standardize color representation, but it suffered from inconsistencies in invocation and usage.
 
-The #link("https://www.w3.org/MarkUp/Wilbur/features.html")[HTML 3.2 specification] of 1996  introduced sixteen color names, derived from the standard 16 colors supported by the Windows VGA palette. These named colors are: `aqua`, `black`, `blue`, `fuchsia`, `gray`, `green`, `lime`, `maroon`, `navy`, `olive`, `purple`, `red`, `silver`, `teal`, `white`, and `yellow`. These named colors allowed users the convenience of names to be used for colors reliably and consistently across HTML documents, without recourse to their hexadecimal values.
+The #link("https://www.w3.org/MarkUp/Wilbur/features.html")[HTML 3.2 specification] of 1996  introduced sixteen color names, derived from the standard 16 colors supported by the Windows VGA palette. These named colors are: 
+```
+- aqua
+- black
+- blue
+- fuchsia
+- gray
+- green
+- lime
+- maroon
+- navy
+- olive
+- purple
+- red
+- silver
+- teal
+- white
+- yellow
+```
 
-The CSS Level 1 colors in 1996 introduced the same sixteen colors as the HTML 3.2 colors above while the CSS Level 2 colors augmented this by `orange` to seventeen named colors.
+Thanks to this standard, these sixteen color names could be used reliably and consistently in documents across the Web, without recourse to their hexadecimal values.
 
-Finally, the #link("https://www.w3.org/TR/css-color-3/#svg-color")[SVG 1.0 Specification] of 2001 and the #link("https://www.w3.org/TR/css-color-3/#html4")[CSS Color Module Level 3] of 2011 have standardized #link("https://www.w3.org/TR/SVG11/types.html#ColorKeywords")[a list of 147 color names], known as the "extended color keywords" or the "recognized color keyword names" which included the original 16 colors, `orange`, and additional colors from the X11 set. This standardization aims to provide a consistent color naming scheme across web, and has remained relatively stable. It is this set of color names that forms the basis for this module.
+The CSS Level 1 colors introduced in 1996 specified these same sixteen colors, while the CSS Level 2 colors augmented this list to seventeen named colors, with the addition of `orange`.
+
+Finally, the #link("https://www.w3.org/TR/css-color-3/#svg-color")[SVG 1.0 Specification] of 2001 and the #link("https://www.w3.org/TR/css-color-3/#html4")[CSS Color Module Level 3] of 2011 have standardized #link("https://www.w3.org/TR/SVG11/types.html#ColorKeywords")[a list of 147 color names], known as the "extended color keywords" or the "recognized color keyword names" which included the original 16 colors, `orange`, and additional colors from the X11 set. This standardization aims to provide a consistent color naming scheme across the Web, and has remained relatively stable. It is this set of color names that forms the basis for this module. These named colors are standard both for CSS and SVG, although we shall refer to them here as CSS Colors.
 
 == Purpose
 
-This module allows #link("https://www.w3.org/TR/css-color-3/#svg-color")[SVG colors] to be used by their names rather than by their RGB or Hex values from within a typst file. It is principally a convenience for those who use SVG colors in their documents.
+The CSS Colors Module is a robust convenience that allows #link("https://www.w3.org/TR/css-color-3/#html4")[CSS colors] to be used by their names within a Typst file.
 
 == Context
 
 Typst comes with #link("https://typst.app/docs/reference/visualize/color/")[seven standard color functions] for accessing colors.
 
-For LaTeX users, the standard way of invoking colors would have been something like:
-
-`\usepackage[svgnames]{xcolor}` or `\usepackage[dvipsnames]{xcolor}`.
-
-This would allow files to access _named colors_ from within `.tex` documents.
-
-A module that allows named SVG colors to be used within `.typ` files would be a convenience for LaTeX users transitioning to Typst.
-
-Moreover, _any_ user who wishes to use SVG named colors would also benefit from this module.
+Any user who is familiar with CSS or SVG named colors may continue to use them in Typst documents by invoking this module.
 
 == Reference documentation
 
@@ -67,7 +81,13 @@ files.
 
 == Usage
 
-svg.(
+Here is an example of how to use the CSS Colors Module:
+
+```
+#import "@preview/css-colors:0.1.0": *
+
+
+```
 
 == Notes
 

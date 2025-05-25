@@ -1,4 +1,4 @@
-#import "../src/svg-colors.typ": svg
+#import "../src/css-colors.typ": css
 
 #set page(margin: 25mm)
 #set text(size: 11pt, font: "Noto Serif")
