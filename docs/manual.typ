@@ -1,11 +1,68 @@
+// Global Styles
 #set page(margin: 25mm)
 #set text(size: 11pt, font: "Noto Serif")
 
+// Text Element configuration
+#show heading.where(level: 1): h1 => {
+    set block(above: 1.5em, below: 1em)
+    set text(weight: "semibold")
+    h1
+  }
+
+#show heading.where(level: 2): h2 => {
+    set block(above: 1.5em, below: 1em)
+    set text(weight: "semibold")
+    h2
+  }
+
+#show heading.where(level: 3): h3 => {
+    set block(above: 1.5em, below: 1em)
+    set text(weight: "semibold")
+    h3
+  }
+
 #show link: set text(fill: blue)
 
-= SVG Colors Module
+// End of setup
 
-This module allows #link("https://www.w3.org/TR/css-color-3/#svg-color")[SVG colors] to be used by their names rather than by their RGB or Hex values.
+= CSS Colors Module
+
+== Introduction
+
+CSS colors have a long and somewhat convoluted history. They may be traced back to the #link("https://en.wikipedia.org/wiki/X11_color_names")[X11 color names] of the #link("https://en.wikipedia.org/wiki/X_Window_System")[X Window System]. 
+
+
+== Purpose
+
+This module allows #link("https://www.w3.org/TR/css-color-3/#svg-color")[SVG colors] to be used by their names rather than by their RGB or Hex values from within a typst file. It is principlly a convenience for those who use SVG colors in their documents.
+
+== Context
+
+Typst comes with #link("https://typst.app/docs/reference/visualize/color/")[seven standard color functions] for accessing colors.
+
+For LaTeX users, the standard way of invoking colors would have been something like:
+
+`\usepackage[svgnames]{xcolor}` or `\usepackage[dvipsnames]{xcolor}`.
+
+This would allow files to access _named colors_ from within `.tex` documents.
+
+A module that allows named SVG colors to be used within `.typ` files would be a convenience for LaTeX users transitioning to Typst.
+
+Moreover, _any_ user who wishes to use SVG named colors would also benefit from this module.
+
+== Reference documentation
+
+For easy reference, tabulations of the SVG color name, its RGB/Hex value, a color swatch, and a color stripe are available as
+
+a. #link("svg-test-table.pdf")[PDF]; and
+
+b. #link("svg-test-table.html")[HTML]
+
+files.
+
+== Usage
+
+svg.(
 
 == Notes
 
@@ -57,3 +114,8 @@ The table below is a comparison of the RBG/Hex values of the eighteen predefined
     [yellow],	[`rgb("#ffdc00")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffdc00"))], [`rgb("#ffff00")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffff00"))],
   )
 ]
+
+== References
+
+https://www.youtube.com/watch?v=HmStJQzclHc
+Alex Sexton: Peachpuffs and Lemonchiffons [CSSConfUS2014]
