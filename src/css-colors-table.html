@@ -5,37 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <title>SVG Colors Table</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+  <title>CSS Colors Table</title>
   <style>
     .noto-serif-400 {
       font-family: "Noto Serif", serif;
       font-optical-sizing: auto;
       font-weight: 400;
       font-style: normal;
-      font-variation-settings:
-        "wdth" 100;
+      font-variation-settings: "wdth" 100;
     }
     .noto-serif-600 {
       font-family: "Noto Serif", serif;
       font-optical-sizing: auto;
       font-weight: 600;
       font-style: normal;
-      font-variation-settings:
-        "wdth" 100;
+      font-variation-settings: "wdth" 100;
     }
     h1 { text-align: center; }
-    table { border-collapse: collapse; width: 60%; margin: 0 auto; /* Centers the table horizontally */}
+    table { border-collapse: collapse; width: 60%; margin: 0 auto; }
+    th { font-variant: small-caps; }
     th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
     th:nth-child(3), td:nth-child(3), th:nth-child(4), td:nth-child(4) {
       text-align: center; /* Center-align specific columns */
     }
-    .swatch { width: 24px; height: 24px; display: inline-block; border: 1px solid #000; }
+    .swatch {
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      border: 1px solid #000;
+    }
     .stripe { width: 100%; height: 16px; }
   </style>
 </head>
 <body class="noto-serif-400">
-  <h1 class="noto-serif-600">SVG Colors Table</h1>
+  <h1 class="noto-serif-600">CSS Colors Table</h1>
   <table>
     <thead>
       <tr>
@@ -928,6 +933,7 @@
         <td><span class="swatch" style="background-color: #9acd32;"></span></td>
         <td><div class="stripe" style="background-color: #9acd32;"></div></td>
       </tr>
+
     </tbody>
   </table>
 </body>

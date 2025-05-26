@@ -1,15 +1,15 @@
 # for a description of available keys, see https://github.com/typst/packages/?tab=readme-ov-file#package-format
 
 [package]
-name = "svg-colors"
+name = "css-colors"
 version = "0.1.0"
-entrypoint = "src/svg-colors.typ"
+entrypoint = "src/css-colors.typ"
 authors = ["kleinbottle", "nandac"]
 license = "Unlicense"
-description = "Allows SVG named colors to be used directly in a Typst document "
+description = "Allows CSS named colors to be used directly in a Typst document"
 # homepage = ""
-repository = "https://github.com/kleinbottle/svg-colors"
-keywords = ["named SVG colors"]
+repository = "https://github.com/kleinbottle/css-colors"
+keywords = ["named CSS colors"]
 categories = ["components"]
 disciplines = ["design", "drawing"]
 compiler = "0.13.0"

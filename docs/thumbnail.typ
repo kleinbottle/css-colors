@@ -1,4 +1,4 @@
-#import "/src/svg-colors.typ" as my-package: *
+#import "/src/css-colors.typ" as my-package: *
 
 #set page(height: auto, margin: 5mm, fill: none)
 

@@ -1,7 +1,7 @@
-# The `svg-colors` Package
+# The `css-colors` Package
 <div align="center">Version 0.1.0</div>
 
-Enables SVG colors to be used by their names within a Typst document.
+Enables CSS colors to be used by their names within a Typst document.
 
 ## Template adaptation checklist
 
@@ -30,9 +30,9 @@ Enables SVG colors to be used by their names within a Typst document.
 These instructions will get you a copy of the project up and running on the typst web app. Perhaps a short code example on importing the package and a very simple teaser usage.
 
 ```typ
-#import "@preview/svg-colors:0.1.0": svg
+#import "@preview/css-colors:0.1.0": *
 
-rect(fill: svg.darkorchid)
+#rect(fill: css("darkorchid"))
 ```
 
 <picture>

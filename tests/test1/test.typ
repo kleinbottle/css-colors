@@ -1,3 +1,3 @@
-#import "/src/svg-colors.typ" as my-package
+#import "/src/css-colors.typ" as my-package
 
 Hello World

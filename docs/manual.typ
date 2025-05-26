@@ -33,7 +33,7 @@
 
 The #link("https://en.wikipedia.org/wiki/X11_color_names")[X11 color names], developed in the 1980s, included a file named `rgb.txt` that was shipped with every #link("https://en.wikipedia.org/wiki/X_Window_System")[X11] installation. It mapped over 400 color names to specific RGB values. This list was used in Unix-based systems to standardize color representation, but it suffered from inconsistencies in invocation and usage.
 
-The #link("https://www.w3.org/MarkUp/Wilbur/features.html")[HTML 3.2 specification] of 1996  introduced sixteen color names, derived from the standard 16 colors supported by the Windows VGA palette. These named colors are: 
+The #link("https://www.w3.org/MarkUp/Wilbur/features.html")[HTML 3.2 specification] of 1996  introduced sixteen color names, derived from the standard 16 colors supported by the Windows VGA palette. These named colors are:
 ```
 - aqua
 - black
@@ -73,9 +73,9 @@ Any user who is familiar with CSS or SVG named colors may continue to use them i
 
 For easy reference, tabulations of the SVG color name, its RGB/Hex value, a color swatch, and a color stripe are available as
 
-a. #link("svg-test-table.pdf")[PDF]; and
+a. #link("src/css-test.pdf")[PDF]; and
 
-b. #link("svg-test-table.html")[HTML]
+b. #link("src/css-test.html")[HTML]
 
 files.
 
