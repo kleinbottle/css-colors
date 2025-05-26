@@ -102,41 +102,41 @@ Here is an example of how to use the CSS Colors Module:
     stroke: none,
     align: (left+horizon, left+horizon, center+horizon, left+horizon, center+horizon),
     inset: 10pt,
-    [aqua],	[`rgb("#7fdbff")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#7fdbff"))], [`rgb("#00ffff")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#00ffff"))],
+    [aqua],	[`#7fdbff`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#7fdbff"))], [`#00ffff`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#00ffff"))],
 
-    [black], [`rgb("#000000")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#000000"))],  [`rgb("#000000")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#000000"))],
+    [black], [`#000000`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#000000"))],  [`#000000`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#000000"))],
 
-    [blue],	[`rgb("#0074d9")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#0074d9"))], [`rgb("#0000ff")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#0000ff"))],
+    [blue],	[`#0074d9`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#0074d9"))], [`#0000ff`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#0000ff"))],
 
-    [eastern], [`rgb("#239dad")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#239dad"))], [N/A], [N/A],
+    [eastern], [`#239dad`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#239dad"))], [Not Defined], [Not Defined],
 
-    [fuchsia], [`rgb("#f012be")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#f012be"))],  [`rgb("#ff00ff")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ff00ff"))],
+    [fuchsia], [`#f012be`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#f012be"))],  [`#ff00ff`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ff00ff"))],
 
-    [gray], [`rgb("#aaaaaa")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#aaaaaa"))], [`rgb("#808080")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#808080"))],
+    [gray], [`#aaaaaa`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#aaaaaa"))], [`#808080`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#808080"))],
 
-    [green], [`rgb("#2ecc40")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#2ecc40"))], [`rgb("#008000")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#008000"))],
+    [green], [`#2ecc40`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#2ecc40"))], [`#008000`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#008000"))],
 
-    [lime],	[`rgb("#01ff70")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#01ff70"))], [`rgb("#00ff00")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#00ff00"))],
+    [lime],	[`#01ff70`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#01ff70"))], [`#00ff00`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#00ff00"))],
 
-    [maroon],	[`rgb("#85144b")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#85144b"))],  [`rgb("#800000")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#800000"))],
+    [maroon],	[`#85144b`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#85144b"))],  [`#800000`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#800000"))],
 
-    [navy],	[`rgb("#001f3f")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#001f3f"))], [`rgb("#000080")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#000080"))],
+    [navy],	[`#001f3f`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#001f3f"))], [`#000080`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#000080"))],
 
-    [olive], [`rgb("#3d9970")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#3d9970"))],  [`rgb("#808000")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#808000"))],
+    [olive], [`#3d9970`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#3d9970"))],  [`#808000`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#808000"))],
 
-    [orange], [`rgb("#ff851b")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ff851b"))], [`rgb("#ffa500")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffa500"))],
+    [orange], [`#ff851b`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ff851b"))], [`#ffa500`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffa500"))],
 
-    [purple], [`rgb("#b10dc9")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#b10dc9"))], [`rgb("#800080")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#800080"))],
+    [purple], [`#b10dc9`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#b10dc9"))], [`#800080`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#800080"))],
 
-    [red], [`rgb("#ff4136")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ff4136"))],  [`rgb("#ff0000")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ff0000"))],
+    [red], [`#ff4136`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ff4136"))],  [`#ff0000`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ff0000"))],
 
-    [silver], [`rgb("#dddddd")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#dddddd"))], [`rgb("#c0c0c0")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#c0c0c0"))],
+    [silver], [`#dddddd`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#dddddd"))], [`#c0c0c0`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#c0c0c0"))],
 
-    [teal], [`rgb("#39cccc")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#39cccc"))], [`rgb("#008080")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#008080"))],
+    [teal], [`#39cccc`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#39cccc"))], [`#008080`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#008080"))],
 
-    [white], [`rgb("#ffffff")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffffff"))], [`rgb("#ffffff")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffffff"))],
+    [white], [`#ffffff`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffffff"))], [`#ffffff`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffffff"))],
 
-    [yellow],	[`rgb("#ffdc00")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffdc00"))], [`rgb("#ffff00")`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffff00"))],
+    [yellow],	[`#ffdc00`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffdc00"))], [`#ffff00`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffff00"))],
   )
 ]
 
