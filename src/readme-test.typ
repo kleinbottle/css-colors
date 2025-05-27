@@ -1,6 +1,8 @@
 #import "css-colors.typ": *
 
-#rect(width: auto, height: auto, fill: css("darkorchid"))[#text(fill: white)[A rectangle filled with darkorchid]]
+The rectangle below was generated with the code inside it.
+
+#rect(width: auto, height: auto, fill: css("darkorchid"))[#text(fill: white)[`#rect(width: auto, height: auto, fill: css("darkorchid"))`]]
 
 The same color may be invoked in lowercase or CamelCase to yield the same color:
 
