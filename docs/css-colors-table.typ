@@ -1,4 +1,4 @@
-#import "css-colors.typ": *
+#import "@preview/css-colors:0.1.0": *
 
 #set page(margin: 25mm)
 #set text(size: 11pt, font: "Noto Serif")

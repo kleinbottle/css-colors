@@ -14,24 +14,40 @@
 # navanitachora@gmail.com
 #
 # First written: 2025-05-21
-# Last revised : 2025-05-26
+# Last revised : 2025-05-28
 
 # generate_css_colors_files.py
 
 import os
+import platform
+import shutil
 import subprocess
 
+CSS_COLORS_MODULE_NAME = "css-colors"
+CSS_COLORS_MODULE_VERSION = "0.1.0"
 INPUT_FILE = os.path.abspath("css-hex.txt")
 OUTPUT_TYP_MODULE = os.path.abspath("../src/css-colors.typ")
-OUTPUT_TEST_TYP = os.path.abspath("../src/css-colors-table.typ")
-OUTPUT_TEST_PDF = os.path.abspath("../src/css-colors-table.pdf")
-OUTPUT_TEST_HTML = os.path.abspath("../src/css-colors-table.html")
+OUTPUT_TEST_TYP = os.path.abspath("../docs/css-colors-table.typ")
+OUTPUT_TEST_PDF = os.path.abspath("../docs/css-colors-table.pdf")
+OUTPUT_TEST_HTML = os.path.abspath("../docs/css-colors-table.html")
+
+PREVIEW_DIR = os.path.join("preview", CSS_COLORS_MODULE_NAME, CSS_COLORS_MODULE_VERSION)
+PACKAGE_DIR = {
+    "Linux": os.path.join(
+        os.path.expanduser("~/.local/share/typst/packages"), PREVIEW_DIR
+    ),
+    "Darwin": os.path.join(
+        os.path.expanduser("~/Library/Application Support/typst/packages"),
+        PREVIEW_DIR,
+    ),
+}
 
 
 def main():
     """Main function to generate all files."""
     color_map = get_css_color_map()
-    generate_css_colors_module(color_map)
+    pkg_dir = create_preview_pkg_dir()
+    generate_css_colors_module(color_map, pkg_dir)
     generate_css_test_typ(color_map)
     generate_css_test_pdf()
     generate_css_test_html(color_map)
@@ -50,7 +66,23 @@ def get_css_color_map():
     return color_map
 
 
-def generate_css_colors_module(color_map):
+def create_preview_pkg_dir():
+    """Create the preview package directory."""
+    pkg_dir = None
+    try:
+        pkg_dir = PACKAGE_DIR[platform.system()]
+    except KeyError:
+        print(f"❌ Unsupported platform: {platform.system()}")
+        exit(1)
+
+    os.makedirs(pkg_dir, exist_ok=True)
+    os.makedirs(os.path.join(pkg_dir, "src"), exist_ok=True)
+
+    print(f"✅ Created preview package directory: {pkg_dir}")
+    return pkg_dir
+
+
+def generate_css_colors_module(color_map, pkg_dir):
     """Generate the css-colors module."""
     with open(OUTPUT_TYP_MODULE, "w", encoding="utf-8") as out:
         # CSS color map
@@ -73,6 +105,10 @@ def generate_css_colors_module(color_map):
         )
         out.write("}\n")
 
+    # Copy the module and TOML to the preview package directory
+    shutil.copytree("../src", os.path.join(pkg_dir, "src"), dirs_exist_ok=True)
+    shutil.copy("../typst.toml", os.path.join(pkg_dir, "typst.toml"))
+
     print("✅ Generated css-colors module:")
     print(f"- {OUTPUT_TYP_MODULE}")
 
@@ -80,7 +116,7 @@ def generate_css_colors_module(color_map):
 def generate_css_test_typ(color_map):
     """Generate the CSS colors Typst file."""
     with open(OUTPUT_TEST_TYP, "w", encoding="utf-8") as out:
-        out.write('#import "css-colors.typ": *\n\n')
+        out.write('#import "@preview/css-colors:0.1.0": *\n\n')
         out.write("#set page(margin: 25mm)\n")
         out.write('#set text(size: 11pt, font: "Noto Serif")\n\n')
         out.write("#align(center, text(size: 20pt)[CSS Colors Table])\n")
