@@ -68,7 +68,7 @@
 
 == README Code Samples and Results
 
-A CSS color may be invoked with `css("colorname")` wherever Typst expects a color value.
+A CSS color may be invoked with `css("color-name")` wherever Typst expects a color value.
 
 + Coloring text.
 
@@ -104,7 +104,7 @@ A CSS color may be invoked with `css("colorname")` wherever Typst expects a colo
 
   (b) SaddleBrown: #box(width: 30mm, height: 1em, fill: css("SaddleBrown"))
 
-+ The maroon shipped with Typst is different from the maroon specified in CSS Colors. Their hex codes are different as shown below. The CSS color is deliberately written as "Maroon: with an initial capital letter to distinguish it here.
++ The maroon shipped with Typst is different from the maroon specified in CSS Colors. Their hex codes are different as shown below. The CSS color is deliberately written as "Maroon" with an initial capital letter to distinguish it here.
 
   ```
   #import "css-colors.typ": *
@@ -113,10 +113,12 @@ A CSS color may be invoked with `css("colorname")` wherever Typst expects a colo
 
   CSS maroon: #css("Maroon").to-hex():: #box(width: 30mm, height: 1em, fill: css("Maroon"))
   ```
+  
+  #grid(columns: 3, rows: 2, row-gutter: 10pt, column-gutter: 10pt, 
+  [Typst maroon], [#color.maroon.to-hex()], [#box(width: 30mm, height: 1em, fill: maroon)], 
 
-  Typst maroon: #color.maroon.to-hex(): #box(width: 30mm, height: 1em, fill: maroon)
-
-  CSS maroon: #css("Maroon").to-hex(): #box(width: 30mm, height: 1em, fill: css("Maroon"))
+  [CSS maroon], [#css("Maroon").to-hex()], [#box(width: 30mm, height: 1em, fill: css("Maroon"))]
+  )
 
 + CSS Colors may also be used in the context of drawing and data visualization.
 
@@ -136,7 +138,7 @@ A CSS color may be invoked with `css("colorname")` wherever Typst expects a colo
   #polygon.regular(
     fill: css("darkgoldenrod").lighten(60%),
     stroke: (paint: css("darkgoldenrod"), thickness: 4pt, cap: "round"),
-    size: 90mm,
+    size: 80mm,
     vertices: 6,
   )]
 
