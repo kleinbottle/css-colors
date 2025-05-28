@@ -1,0 +1,10 @@
+# Bibliography file foor manual.typ
+
+CSShistory:
+  type: video
+  title: "Peachpuffs and Lemonchiffons [CSSConfUS2014]"
+  url:
+    value: https://www.youtube.com/watch?v=HmStJQzclHc
+    date: 2014-07-17
+  author:
+    - Alex Sexton

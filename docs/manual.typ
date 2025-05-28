@@ -8,7 +8,7 @@
 #show raw.where(block: true): set block(
   fill: css("AntiqueWhite"), inset: 1em, radius: 0.5em, width: 100%
 )
-#show link: set text(fill: blue)
+#show link: set text(fill: blue, font: "Source Sans Pro", size: 12pt)
 
 // Text Element configuration
 #show heading.where(level: 1): h1 => {
@@ -67,13 +67,13 @@ The CSS Level 1 colors introduced in 1996 specified these same sixteen colors, w
 
 === CSS/SVG colors
 
-Finally, the #link("https://www.w3.org/TR/css-color-3/#svg-color")[SVG 1.0 Specification] of 2001 and the #link("https://www.w3.org/TR/css-color-3/#html4")[CSS Color Module Level 3] of 2011 have standardized #link("https://www.w3.org/TR/SVG11/types.html#ColorKeywords")[a list of 147 color names], known as the "extended color keywords" or the "recognized color keyword names" which included the original 16 colors, `orange`, and additional colors from the X11 set. This standardization aims to provide a consistent color naming scheme across the Web, and has remained relatively stable. It is this set of color names that forms the basis for this module. These named colors are standard both for CSS and SVG, although we shall refer to them here as CSS Colors.
+Finally, the #link("https://www.w3.org/TR/css-color-3/#svg-color")[SVG 1.0 Specification] of 2001 and the #link("https://www.w3.org/TR/css-color-3/#html4")[CSS Color Module Level 3] of 2011 have standardized #link("https://www.w3.org/TR/SVG11/types.html#ColorKeywords")[a list of 147 color names], known as the "extended color keywords" or the "recognized color keyword names" which included the original 16 colors, `orange`, and additional colors from the X11 set. This standardization aims to provide a consistent color naming scheme across the Web, and has remained relatively stable. It is this set of color names that forms the basis for this module. These named colors are standard both for CSS and SVG, although we shall refer to them here as CSS Colors. How the CSS colors were given their rather idiosyncratic names is explained in #link("https://www.youtube.com/watch?v=HmStJQzclHc")[this You Tube video] #cite(<CSShistory>).
 
 === CSS colors vis-a-vis Typst
 
-Typst comes with #link("https://typst.app/docs/reference/visualize/color/")[seven standard _color functions_] for accessing colors.
+Typst comes with #link("https://typst.app/docs/reference/visualize/color/")[seven standard color functions] for accessing colors.
 
-It also ships with _eighteen pre-defined colors_ which include the sixteen named colors, plus `orange`, plus one more color named `eastern`. The color `eastern` is undefined in the CSS colors. The remaining seventeen colors have identical names, but different RGB/Hex values, as tabulated below.
+It also ships with #link("https://typst.app/docs/reference/visualize/color/")[eighteen predefined colors] which include the sixteen named colors, plus `orange`, plus one more color named `eastern`. The color `eastern` is undefined in the CSS colors. The remaining seventeen colors have identical names, but different RGB/Hex values, as tabulated below.
 
 #show table.cell.where(y: 0): smallcaps
 #show table.cell.where(y: 0): strong
@@ -394,7 +394,4 @@ The following examples demonstrate the usage of the `css` function in various ca
   )
 ]
 
-== References
-
-https://www.youtube.com/watch?v=HmStJQzclHc
-Alex Sexton: Peachpuffs and Lemonchiffons [CSSConfUS2014]
+#bibliography("manual.yml")
