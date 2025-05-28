@@ -78,43 +78,43 @@ It also ships with _eighteen pre-defined colors_ which include the sixteen named
     table.header([Color Name], [Typst Hex Code], [Swatch], [CSS Hex Code], [Swatch]),
     columns: 5,
     stroke: none,
-    align: (left+horizon, left+horizon, center+horizon, left+horizon, center+horizon),
+    align: (center+horizon, center+horizon, center+horizon, center+horizon, center+horizon),
     inset: 10pt,
-    [aqua],	[`#7fdbff`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#7fdbff"))], [`#00ffff`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#00ffff"))],
+    [aqua],	[#text(font: "Fira Mono", size: 11pt)[#color.aqua.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(aqua))], [`#00ffff`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#00ffff"))],
 
-    [black], [`#000000`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#000000"))],  [`#000000`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#000000"))],
+    [black], [#text(font: "Fira Mono", size: 11pt)[#color.black.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(black))],  [`#000000`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#000000"))],
 
-    [blue],	[`#0074d9`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#0074d9"))], [`#0000ff`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#0000ff"))],
+    [blue],	[#text(font: "Fira Mono", size: 11pt)[#color.blue.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(blue))], [`#0000ff`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#0000ff"))],
 
-    [eastern], [`#239dad`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#239dad"))], [Not Defined], [Not Defined],
+    [eastern], [#text(font: "Fira Mono", size: 11pt)[#color.eastern.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(eastern))], [Not Defined], [Not Defined],
 
-    [fuchsia], [`#f012be`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#f012be"))],  [`#ff00ff`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ff00ff"))],
+    [fuchsia], [#text(font: "Fira Mono", size: 11pt)[#color.fuchsia.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(fuchsia))],  [`#ff00ff`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ff00ff"))],
 
-    [gray], [`#aaaaaa`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#aaaaaa"))], [`#808080`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#808080"))],
+    [gray], [#text(font: "Fira Mono", size: 11pt)[#color.gray.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(gray))], [`#808080`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#808080"))],
 
-    [green], [`#2ecc40`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#2ecc40"))], [`#008000`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#008000"))],
+    [green], [#text(font: "Fira Mono", size: 11pt)[#color.green.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(green))], [`#008000`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#008000"))],
 
-    [lime],	[`#01ff70`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#01ff70"))], [`#00ff00`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#00ff00"))],
+    [lime],	[#text(font: "Fira Mono", size: 11pt)[#color.lime.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(lime))], [`#00ff00`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#00ff00"))],
 
-    [maroon],	[`#85144b`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#85144b"))],  [`#800000`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#800000"))],
+    [maroon],	[#text(font: "Fira Mono", size: 11pt)[#color.maroon.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(maroon))],  [`#800000`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#800000"))],
 
-    [navy],	[`#001f3f`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#001f3f"))], [`#000080`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#000080"))],
+    [navy],	[#text(font: "Fira Mono", size: 11pt)[#color.navy.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(navy))], [`#000080`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#000080"))],
 
-    [olive], [`#3d9970`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#3d9970"))],  [`#808000`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#808000"))],
+    [olive], [#text(font: "Fira Mono", size: 11pt)[#color.olive.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(olive))],  [`#808000`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#808000"))],
 
-    [orange], [`#ff851b`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ff851b"))], [`#ffa500`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffa500"))],
+    [orange], [#text(font: "Fira Mono", size: 11pt)[#color.orange.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(orange))], [`#ffa500`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffa500"))],
 
-    [purple], [`#b10dc9`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#b10dc9"))], [`#800080`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#800080"))],
+    [purple], [#text(font: "Fira Mono", size: 11pt)[#color.purple.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(purple))], [`#800080`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#800080"))],
 
-    [red], [`#ff4136`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ff4136"))],  [`#ff0000`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ff0000"))],
+    [red], [#text(font: "Fira Mono", size: 11pt)[#color.red.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(red))],  [`#ff0000`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ff0000"))],
 
-    [silver], [`#dddddd`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#dddddd"))], [`#c0c0c0`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#c0c0c0"))],
+    [silver], [#text(font: "Fira Mono", size: 11pt)[#color.silver.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(silver))], [`#c0c0c0`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#c0c0c0"))],
 
-    [teal], [`#39cccc`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#39cccc"))], [`#008080`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#008080"))],
+    [teal], [#text(font: "Fira Mono", size: 11pt)[#color.teal.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(teal))], [`#008080`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#008080"))],
 
-    [white], [`#ffffff`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffffff"))], [`#ffffff`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffffff"))],
+    [white], [#text(font: "Fira Mono", size: 11pt)[#color.white.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(white))], [`#ffffff`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffffff"))],
 
-    [yellow],	[`#ffdc00`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffdc00"))], [`#ffff00`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffff00"))],
+    [yellow],	[#text(font: "Fira Mono", size: 11pt)[#color.yellow.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(yellow))], [`#ffff00`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffff00"))],
   )
 ]
 
@@ -134,11 +134,7 @@ files.
 
 == Usage
 
-The CSS Color Module provides two functions:
-
-+ `css("color-name")` where `"color-name"` is a valid CSS color. It may be used wherever a color is valid input in Typst.
-
-+ `get-hex-value("color-name")` which returns the hexadecimal code for a valid CSS color.
+The CSS Color Module provides a single function called `css()` which takes a valid CSS color name as argument, and returns the corresponding Typst `rgb()` code with the hexadecimal representation of the color.
 
 The CSS Color module accepts lowercase and CamelCase names as valid CSS colors.
 ```

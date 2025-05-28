@@ -59,12 +59,6 @@ def generate_css_colors_module(color_map):
             out.write(f'  {name}: rgb("{hexval}"),\n')
         out.write(")\n\n")
 
-        # CSS name to hex code
-        out.write("#let css-color-to-hex = (\n")
-        for name, hexval in sorted(color_map.items()):
-            out.write(f'  {name}: "{hexval}",\n')
-        out.write(")\n\n")
-
         # Function to get GB function from the color map given a color name
         out.write("#let css(color-name) = {\n")
         out.write(
@@ -77,21 +71,7 @@ def generate_css_colors_module(color_map):
                 ]
             )
         )
-        out.write("}\n\n")
-
-        # Function to get hex value from the color map given a color name
-        out.write("#let get-hex-value(color-name) = {\n")
-        out.write(
-            ".".join(
-                [
-                    "  css-color-to-hex.at(lower(str(color-name))",
-                    'replace(" ", "")',
-                    'replace("_", "")',
-                    'replace("-", ""))\n',
-                ]
-            )
-        )
-        out.write("}\n\n")
+        out.write("}\n")
 
     print("✅ Generated css-colors module:")
     print(f"- {OUTPUT_TYP_MODULE}")
@@ -112,21 +92,22 @@ def generate_css_test_typ(color_map):
         out.write("    columns: 4,\n")
         out.write("    stroke: none,\n")
         out.write(
-            "    align: (left+horizon, left+horizon, center+horizon, center+horizon),\n"
+            "    align: (center+horizon, center+horizon, "
+            "center+horizon, center+horizon),\n"
         )
         out.write("    table.header([Name], [Hex Value], [Swatch], [Stripe]),\n")
 
         for name in sorted(color_map):
-            hexval = color_map[name]
             out.write(
                 " ".join(
                     [
-                        f"    [{name}],"
-                        f' [#get-hex-value("{name}")],'
+                        f"    [{name}],",
+                        f' [#text(font: "Fira Mono", size: 11pt)'
+                        f'[#css("{name}").to-hex()]],',
                         " [#box(width: 1cm, height: 1cm, stroke: black,"
-                        f'fill: css("{name}"))],'
+                        f'fill: css("{name}"))],',
                         " [#box(width: 5cm, height: 1cm, stroke: none,"
-                        f'fill: css("{name}"))],\n'
+                        f'fill: css("{name}"))],\n',
                     ]
                 )
             )
@@ -139,7 +120,7 @@ def generate_css_test_typ(color_map):
 
 def generate_css_test_pdf():
     """Generate the CSS colors PDF file."""
-    subprocess.run(["typst", "compile", OUTPUT_TEST_TYP], encoding="utf-8")
+    subprocess.run(["typst", "compile", OUTPUT_TEST_TYP], check=True, encoding="utf-8")
     print("✅ Generated CSS test PDF file:")
     print(f"- {OUTPUT_TEST_PDF}")
 
@@ -153,8 +134,10 @@ def generate_css_test_html(color_map):
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&
+    display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..
+    900;1,100..900&display=swap" rel="stylesheet">
   <title>CSS Colors Table</title>
   <style>
     .noto-serif-400 {
@@ -174,10 +157,11 @@ def generate_css_test_html(color_map):
     h1 { text-align: center; }
     table { border-collapse: collapse; width: 60%; margin: 0 auto; }
     th { font-variant: small-caps; }
-    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
     th:nth-child(3), td:nth-child(3), th:nth-child(4), td:nth-child(4) {
       text-align: center; /* Center-align specific columns */
     }
+    code { font-family: "Fira Mono", monospace; }
     .swatch {
       width: 24px;
       height: 24px;
@@ -211,21 +195,21 @@ def generate_css_test_html(color_map):
     with open(OUTPUT_TEST_HTML, "w", encoding="utf-8") as out:
         out.write(html_begin)
         for name, hexval in color_map.items():
-            out.write(f"      <tr>\n")
+            out.write("      <tr>\n")
             out.write(f"        <td>{name}</td>\n")
-            out.write(f"        <td>{hexval}</td>\n")
+            out.write(f"        <td><code>{hexval}</code></td>\n")
             out.write(
                 f'        <td><span class="swatch" style="background-color: '
                 f'{hexval};"></span></td>\n'
             )
             out.write(
-                f'        <td><div class="stripe" style="background-color: '
+                '        <td><div class="stripe" style="background-color: '
                 f'{hexval};"></div></td>\n'
             )
-            out.write(f"      </tr>\n")
+            out.write("      </tr>\n")
         out.write(html_end)
 
-    print(f"✅ Generated CSS test HTML file:")
+    print("✅ Generated CSS test HTML file:")
     print(f"- {OUTPUT_TEST_HTML}")
 
 
