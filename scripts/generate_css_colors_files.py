@@ -22,6 +22,7 @@ import os
 import platform
 import shutil
 import subprocess
+import sys
 
 CSS_COLORS_MODULE_NAME = "css-colors"
 CSS_COLORS_MODULE_VERSION = "0.1.0"
@@ -44,7 +45,7 @@ PACKAGE_DIR = {
 
 
 def main():
-    """Main function to generate all files."""
+    """Generate files related to the CSS Colors module."""
     color_map = get_css_color_map()
     pkg_dir = create_preview_pkg_dir()
     generate_css_colors_module(color_map, pkg_dir)
@@ -73,7 +74,7 @@ def create_preview_pkg_dir():
         pkg_dir = PACKAGE_DIR[platform.system()]
     except KeyError:
         print(f"❌ Unsupported platform: {platform.system()}")
-        exit(1)
+        sys.exit(1)
 
     os.makedirs(pkg_dir, exist_ok=True)
     os.makedirs(os.path.join(pkg_dir, "src"), exist_ok=True)
