@@ -394,4 +394,4 @@ The following examples demonstrate the usage of the `css` function in various ca
   )
 ]
 
-#bibliography("manual.yml")
+#bibliography("manual.yml", title: "References")
