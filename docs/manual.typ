@@ -69,7 +69,9 @@ The CSS Level 1 colors introduced in 1996 specified these same sixteen colors, w
 
 Finally, the #link("https://www.w3.org/TR/SVG11/types.html#ColorKeywords")[SVG 1.1 Specification] of 2011 #cite(<SVG11>) and the #link("https://www.w3.org/TR/css-color-3/#html4")[CSS Color Module Level 3] #cite(<CSS3>) of 2022 have standardized on a list of 147 color names, known as the "recognized color keyword names" or the "extended color keywords"  respectively. They include the original 16 colors, augmented by `orange`, and additional colors from the X11 set. These colors---common to both the CSS and SVG standards---are referred to as the CSS Colors in this manual and module.
 
-This standardization aims to provide a consistent color naming scheme across the Web, and has remained relatively stable. It is this set of color names that forms the basis for this module. How the CSS colors were given their rather idiosyncratic names is explained in #link("https://www.youtube.com/watch?v=HmStJQzclHc")[this You Tube video] #cite(<CSShistory>).
+This standardization aims to provide a consistent color naming scheme across the Web, and has remained relatively stable. It is this set of color names that forms the basis for this module. How the CSS colors were given their rather idiosyncratic names is explained in a lighthearted but factual fashion by Alex Sexton in this #link("https://www.youtube.com/watch?v=HmStJQzclHc")[this You Tube video] #cite(<CSShistory>).
+
+There are 147 "recognized CSS color keyword names" of which only 138 are unique.
 
 === CSS colors vis-a-vis Typst
 
