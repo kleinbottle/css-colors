@@ -1,4 +1,4 @@
-#import "/src/css-colors.typ" as my-package
+#import #import "@preview/css-colors:0.1.0": *
 
 // TODO real tests
 #assert(true)

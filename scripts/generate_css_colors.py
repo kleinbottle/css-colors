@@ -14,23 +14,20 @@
 # navanitachora@gmail.com
 #
 # First written: 2025-05-21
-# Last revised : 2025-05-28
+# Last revised : 2025-05-29
 
-# generate_css_colors_files.py
+# generate_css_colors.py
 
 import os
 import platform
 import shutil
-import subprocess
 import sys
 
 CSS_COLORS_MODULE_NAME = "css-colors"
 CSS_COLORS_MODULE_VERSION = "0.1.0"
+CSS_COLORS_MODULE = os.path.abspath("../src/css-colors.typ")
+HTML_COLORS_TABLE = os.path.abspath("../docs/css-colors-table.html")
 INPUT_FILE = os.path.abspath("css-hex.txt")
-OUTPUT_TYP_MODULE = os.path.abspath("../src/css-colors.typ")
-OUTPUT_TEST_TYP = os.path.abspath("../docs/css-colors-table.typ")
-OUTPUT_TEST_PDF = os.path.abspath("../docs/css-colors-table.pdf")
-OUTPUT_TEST_HTML = os.path.abspath("../docs/css-colors-table.html")
 
 PREVIEW_DIR = os.path.join("preview", CSS_COLORS_MODULE_NAME, CSS_COLORS_MODULE_VERSION)
 PACKAGE_DIR = {
@@ -45,13 +42,11 @@ PACKAGE_DIR = {
 
 
 def main():
-    """Generate files related to the CSS Colors module."""
+    """Generate css-colors module and HTML colors table."""
     color_map = get_css_color_map()
     pkg_dir = create_preview_pkg_dir()
     generate_css_colors_module(color_map, pkg_dir)
-    generate_css_test_typ(color_map)
-    generate_css_test_pdf()
-    generate_css_test_html(color_map)
+    generate_html_colors_table(color_map)
 
 
 def get_css_color_map():
@@ -85,7 +80,7 @@ def create_preview_pkg_dir():
 
 def generate_css_colors_module(color_map, pkg_dir):
     """Generate the css-colors module."""
-    with open(OUTPUT_TYP_MODULE, "w", encoding="utf-8") as out:
+    with open(CSS_COLORS_MODULE, "w", encoding="utf-8") as out:
         # CSS color map
         out.write("#let css-colors = (\n")
         for name, hexval in sorted(color_map.items()):
@@ -111,59 +106,11 @@ def generate_css_colors_module(color_map, pkg_dir):
     shutil.copy("../typst.toml", os.path.join(pkg_dir, "typst.toml"))
 
     print("✅ Generated css-colors module:")
-    print(f"- {OUTPUT_TYP_MODULE}")
+    print(f"- {CSS_COLORS_MODULE}")
 
 
-def generate_css_test_typ(color_map):
-    """Generate the CSS colors Typst file."""
-    with open(OUTPUT_TEST_TYP, "w", encoding="utf-8") as out:
-        out.write('#import "@preview/css-colors:0.1.0": *\n\n')
-        out.write("#set page(margin: 25mm)\n")
-        out.write('#set text(size: 11pt, font: "Noto Serif")\n\n')
-        out.write("#align(center, text(size: 20pt)[CSS Colors Table])\n")
-        out.write("#show table.cell.where(y: 0): smallcaps\n")
-        out.write("#show table.cell.where(y: 0): strong\n")
-        out.write("#align(center)[\n")
-        out.write("  #table(\n")
-        out.write("    inset: 10pt,\n")
-        out.write("    columns: 4,\n")
-        out.write("    stroke: none,\n")
-        out.write(
-            "    align: (center+horizon, center+horizon, "
-            "center+horizon, center+horizon),\n"
-        )
-        out.write("    table.header([Name], [Hex Value], [Swatch], [Stripe]),\n")
-
-        for name in sorted(color_map):
-            out.write(
-                " ".join(
-                    [
-                        f"    [{name}],",
-                        f' [#text(font: "Fira Mono", size: 11pt)'
-                        f'[#css("{name}").to-hex()]],',
-                        " [#box(width: 1cm, height: 1cm, stroke: black,"
-                        f'fill: css("{name}"))],',
-                        " [#box(width: 5cm, height: 1cm, stroke: none,"
-                        f'fill: css("{name}"))],\n',
-                    ]
-                )
-            )
-        out.write("  )\n")
-        out.write("]\n")
-
-    print("✅ Generated CSS Colors Table Typst file:")
-    print(f"- {OUTPUT_TEST_TYP}")
-
-
-def generate_css_test_pdf():
-    """Generate the CSS colors PDF file."""
-    subprocess.run(["typst", "compile", OUTPUT_TEST_TYP], check=True, encoding="utf-8")
-    print("✅ Generated CSS test PDF file:")
-    print(f"- {OUTPUT_TEST_PDF}")
-
-
-def generate_css_test_html(color_map):
-    """Generate the CSS colors HTML file."""
+def generate_html_colors_table(color_map):
+    """Generate the HTML colors table."""
     html_begin = """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -175,7 +122,7 @@ def generate_css_test_html(color_map):
     display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..
     900;1,100..900&display=swap" rel="stylesheet">
-  <title>CSS Colors Table</title>
+  <title>Available CSS Colors</title>
   <style>
     .noto-serif-400 {
       font-family: "Noto Serif", serif;
@@ -209,7 +156,7 @@ def generate_css_test_html(color_map):
   </style>
 </head>
 <body class="noto-serif-400">
-  <h1 class="noto-serif-600">CSS Colors Table</h1>
+  <h1 class="noto-serif-600">Available CSS Colors</h1>
   <table>
     <thead>
       <tr>
@@ -229,7 +176,7 @@ def generate_css_test_html(color_map):
 </html>
 """
 
-    with open(OUTPUT_TEST_HTML, "w", encoding="utf-8") as out:
+    with open(HTML_COLORS_TABLE, "w", encoding="utf-8") as out:
         out.write(html_begin)
         for name, hexval in color_map.items():
             out.write("      <tr>\n")
@@ -246,8 +193,8 @@ def generate_css_test_html(color_map):
             out.write("      </tr>\n")
         out.write(html_end)
 
-    print("✅ Generated CSS test HTML file:")
-    print(f"- {OUTPUT_TEST_HTML}")
+    print("✅ Generated HTML colors table:")
+    print(f"- {HTML_COLORS_TABLE}")
 
 
 if __name__ == "__main__":

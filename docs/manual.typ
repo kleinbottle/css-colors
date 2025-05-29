@@ -71,9 +71,7 @@ Finally, the #link("https://www.w3.org/TR/css-color-3/#svg-color")[SVG 1.0 Speci
 
 === CSS colors vis-a-vis Typst
 
-Typst comes with #link("https://typst.app/docs/reference/visualize/color/")[seven standard color functions] for accessing colors.
-
-It also ships with #link("https://typst.app/docs/reference/visualize/color/")[eighteen predefined colors] which include the sixteen named colors, plus `orange`, plus one more color named `eastern`. The color `eastern` is undefined in the CSS colors. The remaining seventeen colors have identical names, but different RGB/Hex values, as tabulated below.
+Typst ships with #link("https://typst.app/docs/reference/visualize/color/#predefined-colors")[eighteen predefined colors] which include the sixteen named colors, plus `orange`, plus one more color named `eastern`. The color `eastern` is undefined in the CSS colors. The remaining seventeen colors have identical names, but different RGB/Hex values, as tabulated below.
 
 #show table.cell.where(y: 0): smallcaps
 #show table.cell.where(y: 0): strong
@@ -128,11 +126,15 @@ The CSS Colors Module is a robust convenience which allows #link("https://www.w3
 
 == Reference documentation
 
-For easy reference, tabulations of the CSS color name, its RGB/Hex value, a color swatch, and a color stripe are available #link(<available-css-colors>)[here].
+For easy reference the CSS color names, their RGB/Hex codes, color swatches, and color stripes have been tabulated and are available #link(<available-css-colors>)[here].
+
+You may also view them in a browser by clicking on this #link("https://htmlpreview.github.io/?https://github.com/kleinbottle/css-colors/blob/main/docs/css-colors-table.html")[link].
 
 == Usage
 
-The CSS Colors Module provides a `css` function defined as:
+=== Definition
+
+The CSS Colors Module provides a function `css` defined as:
 
 ```
 css(
@@ -140,9 +142,19 @@ css(
 ) -> color
 ```
 
-The css function accepts a single parameter, `color-name`, which is the name of a CSS color. It returns the corresponding rgb code as a Typst color type.
+=== Parameters
 
-The `color-name` can be provided in either lowercase or CamelCase formats, both of which are valid.
+- `color-name`
+
+A string representing the color name. The `color-name` parameter can be specified in either lowercase or CamelCase formats, both of which are valid.
+
+=== Exports
+
+- `color`
+
+The `css` function returns an RGB color corresponding to the specified `color-name`.
+
+Since the returned value is of type `color`, it can be used with any of Typst's #link("https://typst.app/docs/reference/visualize/color/#definitions-space")[color functions].
 
 === Examples
 
@@ -168,7 +180,7 @@ The following examples demonstrate the usage of the `css` function in various ca
 
   #rect(width: 100%, height: auto, fill: css("darkorchid"))
 
-+ CSS Colors may be invoked either with lowercase or CamelCase.
++ CSS colors may be specified in either lowercase or CamelCase.
 
   ```
   #import "@preview/css-colors:0.1.0": *
@@ -182,32 +194,40 @@ The following examples demonstrate the usage of the `css` function in various ca
 
   (b) SaddleBrown: #box(width: 30mm, height: 1em, fill: css("SaddleBrown"))
 
-+ The maroon shipped with Typst is different from the maroon specified in CSS Colors. Their hex codes are different as shown below. The CSS color is deliberately written as "Maroon" with an initial capital letter to distinguish it here.
++ The maroon color in Typst differs from the Maroon color defined in CSS, as evidenced by their distinct hex codes. To emphasize this distinction, the CSS Maroon is intentionally capitalized with an initial uppercase letter.
 
   ```
   #import "@preview/css-colors:0.1.0": *
 
-  Typst maroon: #color.maroon.to-hex(): #box(width: 30mm, height: 1em, fill: maroon)
-
-  CSS maroon: #css("Maroon").to-hex():: #box(width: 30mm, height: 1em, fill: css("Maroon"))
+  #grid(
+    columns: 3,
+    rows: 2,
+    row-gutter: 10pt,
+    column-gutter: 10pt,
+    [Typst maroon], [#color.maroon.to-hex()], [#box(width: 30mm, height: 1em, fill: maroon)],
+    [CSS maroon], [#css("Maroon").to-hex()], [#box(width: 30mm, height: 1em, fill: css("Maroon"))]
+  )
   ```
 
-  #grid(columns: 3, rows: 2, row-gutter: 10pt, column-gutter: 10pt,
-  [Typst maroon], [#color.maroon.to-hex()], [#box(width: 30mm, height: 1em, fill: maroon)],
-
-  [CSS maroon], [#css("Maroon").to-hex()], [#box(width: 30mm, height: 1em, fill: css("Maroon"))]
+  #grid(
+    columns: 3,
+    rows: 2,
+    row-gutter: 10pt,
+    column-gutter: 10pt,
+    [Typst maroon], [#color.maroon.to-hex()], [#box(width: 30mm, height: 1em, fill: maroon)],
+    [CSS maroon], [#css("Maroon").to-hex()], [#box(width: 30mm, height: 1em, fill: css("Maroon"))]
   )
 
-+ CSS Colors may also be used in the context of drawing and data visualization.
++ CSS colors may also be used in the context of drawing and data visualization.
 
   ```
   #import "@preview/css-colors:0.1.0": *
 
   #align(center)[
   #polygon.regular(
-    fill: css("DarkGoldenRod").lighten(60%),
+    fill: css("darkgoldenrod").lighten(60%),
     stroke: (paint: css("darkgoldenrod"), thickness: 4pt, cap: "round"),
-    size: 90mm,
+    size: 80mm,
     vertices: 6,
   )]
   ```
@@ -220,20 +240,21 @@ The following examples demonstrate the usage of the `css` function in various ca
     vertices: 6,
   )]
 
-+ CSS Colors may be used to underline text with a line of default thickness. The thickness of the underline may be changed manually if desired.
++ CSS colors may be used to underline text with a line of default thickness. The thickness of the underline may be changed manually if desired.
 
   ```
   #import "@preview/css-colors:0.1.0": *
 
   This is #underline(stroke: css("teal"))[important.]
+
   This is #underline(stroke: (paint: css("teal"), thickness: 2pt))[important.]
   ```
 
-  This is #underline(stroke: css("teal"))[important.] This is #underline(stroke: (paint: css("teal"), thickness: 2pt))[important.]
+  This is #underline(stroke: css("teal"))[important.]
 
-== Notes
+  This is #underline(stroke: (paint: css("teal"), thickness: 2pt))[important.]
 
-=== Available CSS Colors <available-css-colors>
+== Available CSS Colors <available-css-colors>
 
 #show table.cell.where(y: 0): smallcaps
 #show table.cell.where(y: 0): strong

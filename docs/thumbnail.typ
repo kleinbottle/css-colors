@@ -1,4 +1,4 @@
-#import "/src/css-colors.typ" as my-package: *
+#import "@preview/css-colors:0.1.0": *
 
 #set page(height: auto, margin: 5mm, fill: none)
 

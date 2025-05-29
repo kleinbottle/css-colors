@@ -1,3 +1,3 @@
-#import "/src/css-colors.typ" as my-package
+#import "@preview/css-colors:0.1.0": *
 
 Hello World
