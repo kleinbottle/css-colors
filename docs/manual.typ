@@ -37,11 +37,11 @@
 
 === X11 colors
 
-The #link("https://en.wikipedia.org/wiki/X11_color_names")[X11 color names], developed in the 1980s, included a file named `rgb.txt` that was shipped with every #link("https://en.wikipedia.org/wiki/X_Window_System")[X11] installation. It mapped over 400 color names to specific RGB values. This list was used in Unix-based systems to standardize color representation, but it suffered from inconsistencies in invocation and usage.
+The #link("https://en.wikipedia.org/wiki/X11_color_names")[X11 color names] #cite(<X11colors>), developed in the 1980s, included a file named `rgb.txt` that was shipped with every #link("https://en.wikipedia.org/wiki/X_Window_System")[X11] installation. It mapped over 400 color names to specific RGB values. This list was used in Unix-based systems to standardize color representation, but it suffered from inconsistencies in invocation and usage.
 
 === Sixteen named colors
 
-The #link("https://www.w3.org/MarkUp/Wilbur/features.html")[HTML 3.2 specification] of 1996  introduced sixteen color names, derived from the standard 16 colors supported by the Windows VGA palette. These colors, hitherto called the _sixteen named colors_, are:
+The #link("https://www.w3.org/MarkUp/Wilbur/features.html")[HTML 3.2 specification] #cite(<HTML32>) of 1996 introduced sixteen color names, derived from the standard 16 colors supported by the Windows VGA palette. These colors, called the _sixteen named colors_, are:
 ```
 - aqua
 - black
@@ -65,19 +65,23 @@ Thanks to this standard, these sixteen color names could be used reliably and co
 
 The CSS Level 1 colors introduced in 1996 specified these same sixteen colors, while the CSS Level 2 colors, introduced in 1998, augmented this list to seventeen named colors, with the addition of `orange`.
 
-=== CSS/SVG colors
+=== SVG/CSS colors
 
-Finally, the #link("https://www.w3.org/TR/css-color-3/#svg-color")[SVG 1.0 Specification] of 2001 and the #link("https://www.w3.org/TR/css-color-3/#html4")[CSS Color Module Level 3] of 2011 have standardized #link("https://www.w3.org/TR/SVG11/types.html#ColorKeywords")[a list of 147 color names], known as the "extended color keywords" or the "recognized color keyword names" which included the original 16 colors, `orange`, and additional colors from the X11 set. This standardization aims to provide a consistent color naming scheme across the Web, and has remained relatively stable. It is this set of color names that forms the basis for this module. These named colors are standard both for CSS and SVG, although we shall refer to them here as CSS Colors. How the CSS colors were given their rather idiosyncratic names is explained in #link("https://www.youtube.com/watch?v=HmStJQzclHc")[this You Tube video] #cite(<CSShistory>).
+Finally, the #link("https://www.w3.org/TR/SVG11/types.html#ColorKeywords")[SVG 1.1 Specification] of 2011 #cite(<SVG11>) and the #link("https://www.w3.org/TR/css-color-3/#html4")[CSS Color Module Level 3] #cite(<CSS3>) of 2022 have standardized on a list of 147 color names, known as the "recognized color keyword names" or the "extended color keywords"  respectively. They include the original 16 colors, augmented by `orange`, and additional colors from the X11 set. These colors---common to both the CSS and SVG standards---are referred to as the CSS Colors in this manual and module.
+
+This standardization aims to provide a consistent color naming scheme across the Web, and has remained relatively stable. It is this set of color names that forms the basis for this module. How the CSS colors were given their rather idiosyncratic names is explained in #link("https://www.youtube.com/watch?v=HmStJQzclHc")[this You Tube video] #cite(<CSShistory>).
 
 === CSS colors vis-a-vis Typst
 
-Typst ships with #link("https://typst.app/docs/reference/visualize/color/#predefined-colors")[eighteen predefined colors] which include the sixteen named colors, plus `orange`, plus one more color named `eastern`. The color `eastern` is undefined in the CSS colors. The remaining seventeen colors have identical names, but different RGB/Hex values, as tabulated below.
+Typst ships with #link("https://typst.app/docs/reference/visualize/color/#predefined-colors")[eighteen predefined colors] which include the sixteen named colors, plus `orange`, plus one more color named `eastern`. The color `eastern` is undefined in the CSS colors.
+
+The remaining seventeen colors have identical names, but---with the exception of `white` and `black`---they have different RGB/Hex values, as tabulated below.
 
 #show table.cell.where(y: 0): smallcaps
 #show table.cell.where(y: 0): strong
 #align(center)[
   #table(
-    table.header([Color Name], [Typst Hex Code], [Swatch], [CSS Hex Code], [Swatch]),
+    table.header([Color Name], [Typst Hex Value], [Swatch], [CSS Hex Value], [Swatch]),
     columns: 5,
     stroke: none,
     align: (center+horizon, center+horizon, center+horizon, center+horizon, center+horizon),
@@ -122,7 +126,7 @@ Typst ships with #link("https://typst.app/docs/reference/visualize/color/#predef
 
 == Purpose
 
-The CSS Colors Module is a robust convenience which allows #link("https://www.w3.org/TR/css-color-3/#html4")[CSS colors] to be used by their names within a Typst file, rather than by their RGB/Hex codes, which have to be looked up.
+The CSS Colors Module is a robust convenience which allows #link("https://www.w3.org/TR/css-color-3/#svg-color")[CSS/SVG colors] to be used by their names within a Typst file, rather than by their RGB/Hex codes, which have to be looked up.
 
 == Reference documentation
 
@@ -415,4 +419,4 @@ The following examples demonstrate the usage of the `css` function in various ca
   )
 ]
 
-#bibliography("manual.yml", title: "References")
+#bibliography("manual.yml", title: "References", style: "ieee")
