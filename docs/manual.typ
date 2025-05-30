@@ -71,7 +71,7 @@ Finally, the #link("https://www.w3.org/TR/SVG11/types.html#ColorKeywords")[SVG 1
 
 This standardization aims to provide a consistent color naming scheme across the Web, and has remained relatively stable. It is this set of color names that forms the basis for this module. How the CSS colors were given their rather idiosyncratic names is explained in a lighthearted but factual fashion by Alex Sexton in this #link("https://www.youtube.com/watch?v=HmStJQzclHc")[this You Tube video] #cite(<CSShistory>).
 
-There are 147 "recognized CSS color keyword names" of which only 138 are unique.
+There are 147 "recognized CSS color keyword names" all of which are unique. But of these, only 138 have uniwue Hex values. This means that there are nine pairs of named colors that share the same hex value. 
 
 === CSS colors vis-a-vis Typst
 
