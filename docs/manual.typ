@@ -71,13 +71,17 @@ Finally, the #link("https://www.w3.org/TR/SVG11/types.html#ColorKeywords")[SVG 1
 
 This standardization aims to provide a consistent color naming scheme across the Web, and has remained relatively stable. It is this set of color names that forms the basis for this module. How the CSS colors were given their rather idiosyncratic names is explained in a lighthearted but factual fashion by Alex Sexton in this #link("https://www.youtube.com/watch?v=HmStJQzclHc")[this You Tube video] #cite(<CSShistory>).
 
-There are 147 "recognized CSS color keyword names" all of which are unique. But of these, only 138 have uniwue Hex values. This means that there are nine pairs of named colors that share the same hex value. 
+There are 147 "recognized CSS color keyword names" all of which are unique. But of these, only 138 have uniwue Hex values. This means that there are nine pairs of named colors that share the same hex value.
+
+// Make a table of aliased hex colors with different names and show it in appendix.
 
 === CSS colors vis-a-vis Typst
 
 Typst ships with #link("https://typst.app/docs/reference/visualize/color/#predefined-colors")[eighteen predefined colors] which include the sixteen named colors, plus `orange`, plus one more color named `eastern`. The color `eastern` is undefined in the CSS colors.
 
 The remaining seventeen colors have identical names, but---with the exception of `white` and `black`---they have different RGB/Hex values, as tabulated below.
+
+// Might also be judicious to move this to an Appendix. Then the main text flow will be visually uninterrupted.
 
 #show table.cell.where(y: 0): smallcaps
 #show table.cell.where(y: 0): strong
@@ -126,13 +130,15 @@ The remaining seventeen colors have identical names, but---with the exception of
   )
 ]
 
-== Purpose
+== Purpose of Module
 
 The CSS Colors Module is a robust convenience which allows #link("https://www.w3.org/TR/css-color-3/#svg-color")[CSS/SVG colors] to be used by their names within a Typst file, rather than by their RGB/Hex codes, which have to be looked up.
 
 == Reference documentation
 
 For easy reference the CSS color names, their RGB/Hex codes, color swatches, and color stripes have been tabulated and are available #link(<available-css-colors>)[here].
+
+// Also an Appendix?
 
 You may also view them in a browser by clicking on this #link("https://htmlpreview.github.io/?https://github.com/kleinbottle/css-colors/blob/main/docs/css-colors-table.html")[link].
 
@@ -261,6 +267,8 @@ The following examples demonstrate the usage of the `css` function in various ca
   This is #underline(stroke: (paint: css("teal"), thickness: 2pt))[important.]
 
 == Available CSS Colors <available-css-colors>
+
+// Perhaps make this an Appendix of tables with captions.
 
 #show table.cell.where(y: 0): smallcaps
 #show table.cell.where(y: 0): strong
