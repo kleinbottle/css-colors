@@ -134,17 +134,17 @@ The remaining seventeen colors have identical names, but---with the exception of
 
 The CSS Colors Module is a robust convenience which allows #link("https://www.w3.org/TR/css-color-3/#svg-color")[CSS/SVG colors] to be used by their names within a Typst file, rather than by their RGB/Hex codes, which have to be looked up.
 
-== Reference documentation
+== Easy Reference
 
 For easy reference the CSS color names, their RGB/Hex codes, color swatches, and color stripes have been tabulated and are available #link(<available-css-colors>)[here].
 
-// Also an Appendix?
-
 You may also view them in a browser by clicking on this #link("https://htmlpreview.github.io/?https://github.com/kleinbottle/css-colors/blob/main/docs/css-colors-table.html")[link].
 
-== Usage
+// Final table as Appendix linked to this section?
 
-=== Definition
+== Implementation
+
+=== Function
 
 The CSS Colors Module provides a function `css` defined as:
 
@@ -168,7 +168,7 @@ The `css` function returns an RGB color corresponding to the specified `color-na
 
 Since the returned value is of type `color`, it can be used with any of Typst's #link("https://typst.app/docs/reference/visualize/color/#definitions-space")[color functions].
 
-=== Examples
+== Usage
 
 The following examples demonstrate the usage of the `css` function in various cases:
 
