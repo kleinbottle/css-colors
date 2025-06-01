@@ -66,3 +66,5 @@ A more in-depth description of usage. Any template arguments? A complicated exam
 * Confluence link:
 * Asana board:
 * etc...
+
+# Needed to install just, rust and tytanic

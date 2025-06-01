@@ -149,5 +149,5 @@
 )
 
 #let css(color-name) = {
-  css-colors.at(lower(str(color-name)).replace(" ", "").replace("_", "").replace("-", ""))
+  css-colors.at(lower(str(color-name)), default: rgb("#000000"))
 }

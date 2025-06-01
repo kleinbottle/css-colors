@@ -19,33 +19,16 @@
 # generate_css_colors.py
 
 import os
-import platform
-import shutil
-import sys
 
-CSS_COLORS_MODULE_NAME = "css-colors"
-CSS_COLORS_MODULE_VERSION = "0.1.0"
 CSS_COLORS_MODULE = os.path.abspath("../src/css-colors.typ")
 HTML_COLORS_TABLE = os.path.abspath("../docs/css-colors-table.html")
 INPUT_FILE = os.path.abspath("css-hex.txt")
-
-PREVIEW_DIR = os.path.join("preview", CSS_COLORS_MODULE_NAME, CSS_COLORS_MODULE_VERSION)
-PACKAGE_DIR = {
-    "Linux": os.path.join(
-        os.path.expanduser("~/.local/share/typst/packages"), PREVIEW_DIR
-    ),
-    "Darwin": os.path.join(
-        os.path.expanduser("~/Library/Application Support/typst/packages"),
-        PREVIEW_DIR,
-    ),
-}
 
 
 def main():
     """Generate css-colors module and HTML colors table."""
     color_map = get_css_color_map()
-    pkg_dir = create_preview_pkg_dir()
-    generate_css_colors_module(color_map, pkg_dir)
+    generate_css_colors_module(color_map)
     generate_html_colors_table(color_map)
 
 
@@ -61,24 +44,7 @@ def get_css_color_map():
                     color_map[name.lower()] = hexval.lower()
     return color_map
 
-
-def create_preview_pkg_dir():
-    """Create the preview package directory."""
-    pkg_dir = None
-    try:
-        pkg_dir = PACKAGE_DIR[platform.system()]
-    except KeyError:
-        print(f"❌ Unsupported platform: {platform.system()}")
-        sys.exit(1)
-
-    os.makedirs(pkg_dir, exist_ok=True)
-    os.makedirs(os.path.join(pkg_dir, "src"), exist_ok=True)
-
-    print(f"✅ Created preview package directory: {pkg_dir}")
-    return pkg_dir
-
-
-def generate_css_colors_module(color_map, pkg_dir):
+def generate_css_colors_module(color_map):
     """Generate the css-colors module."""
     with open(CSS_COLORS_MODULE, "w", encoding="utf-8") as out:
         # CSS color map
@@ -89,21 +55,8 @@ def generate_css_colors_module(color_map, pkg_dir):
 
         # Function to get GB function from the color map given a color name
         out.write("#let css(color-name) = {\n")
-        out.write(
-            ".".join(
-                [
-                    "  css-colors.at(lower(str(color-name))",
-                    'replace(" ", "")',
-                    'replace("_", "")',
-                    'replace("-", ""))\n',
-                ]
-            )
-        )
+        out.write('  css-colors.at(lower(str(color-name)), default: rgb("#000000"))\n')
         out.write("}\n")
-
-    # Copy the module and TOML to the preview package directory
-    shutil.copytree("../src", os.path.join(pkg_dir, "src"), dirs_exist_ok=True)
-    shutil.copy("../typst.toml", os.path.join(pkg_dir, "typst.toml"))
 
     print("✅ Generated css-colors module:")
     print(f"- {CSS_COLORS_MODULE}")
