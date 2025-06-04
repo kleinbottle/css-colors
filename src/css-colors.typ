@@ -149,5 +149,9 @@
 )
 
 #let css(color-name) = {
-  css-colors.at(lower(str(color-name)), default: rgb("#000000"))
+  if lower(str(color-name)) in css-colors {
+    css-colors.at(lower(str(color-name)))
+  } else {
+    panic("error: invalid CSS color name: " + str(color-name))
+  }
 }

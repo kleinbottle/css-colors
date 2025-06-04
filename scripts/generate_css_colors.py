@@ -55,7 +55,7 @@ def generate_css_colors_module(color_map):
 
         # Function to get GB function from the color map given a color name
         out.write("#let css(color-name) = {\n")
-        out.write('  css-colors.at(lower(str(color-name)), default: rgb("#000000"))\n')
+        out.write('  css-colors.at(lower(str(color-name)))\n')
         out.write("}\n")
 
     print("✅ Generated css-colors module:")
