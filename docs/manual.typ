@@ -132,7 +132,7 @@ Since the returned value is of type `color`, it can be used with any of Typst's 
 
 == Usage
 
-The following examples demonstrate the usage of the `css` function in various cases:
+The following examples demonstrate the usage of the CSS colors module in various cases:
 
 + Coloring text.
 
@@ -394,5 +394,3 @@ The following examples demonstrate the usage of the `css` function in various ca
     )
   ], caption: [Available CSS colors],
 ) <available-css-colors>
-
-#pagebreak()
