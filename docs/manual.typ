@@ -110,7 +110,7 @@ You may also view them in a browser by clicking on this #link("https://htmlprevi
 
 The CSS Colors Module provides a function `css` defined as:
 
-```
+```typ
 css(
   str color-name
 ) -> color
@@ -136,33 +136,33 @@ The following examples demonstrate the usage of the `css` function in various ca
 
 + Coloring text.
 
-  ```
-    #import "@preview/css-colors:0.1.0": *
+  ```typ
+  #import "@preview/css-colors:0.1.0": *
 
-    Normal text may be #text(fill: css("crimson"))[colored so.]
-    ```
+  Normal text may be #text(fill: css("crimson"))[colored so.]
+  ```
 
   Normal text may be #text(fill: css("crimson"))[colored so.]
 
 + A rectangle may be colored with `fill`.
 
-  ```
-    #import "@preview/css-colors:0.1.0": *
+  ```typ
+  #import "@preview/css-colors:0.1.0": *
 
-    #rect(width: 100%, height: auto, fill: css("darkorchid"))
-    ```
+  #rect(width: 100%, height: auto, fill: css("darkorchid"))
+  ```
 
   #rect(width: 100%, height: auto, fill: css("darkorchid"))
 
 + CSS colors may be specified in either lowercase or CamelCase.
 
+  ```typ
+  #import "@preview/css-colors:0.1.0": *
+
+  (a) saddlebrown: #box(width: 30mm, height: 1em, fill: css("saddlebrown"))
+
+  (b) SaddleBrown: #box(width: 30mm, height: 1em, fill: css("SaddleBrown"))
   ```
-    #import "@preview/css-colors:0.1.0": *
-
-    (a) saddlebrown: #box(width: 30mm, height: 1em, fill: css("saddlebrown"))
-
-    (b) SaddleBrown: #box(width: 30mm, height: 1em, fill: css("SaddleBrown"))
-    ```
 
   (a) saddlebrown: #box(width: 30mm, height: 1em, fill: css("saddlebrown"))
 
@@ -170,18 +170,18 @@ The following examples demonstrate the usage of the `css` function in various ca
 
 + The maroon color in Typst differs from the Maroon color defined in CSS, as evidenced by their distinct hex codes.  To emphasize this distinction, the CSS `Maroon` is intentionally capitalized with an initial uppercase letter.
 
-  ```
-    #import "@preview/css-colors:0.1.0": *
+  ```typ
+  #import "@preview/css-colors:0.1.0": *
 
-    #grid(
-      columns: 3,
-      rows: 2,
-      row-gutter: 10pt,
-      column-gutter: 10pt,
-      [Typst maroon], [#color.maroon.to-hex()], [#box(width: 30mm, height: 1em, fill: maroon)],
-      [CSS maroon], [#css("Maroon").to-hex()], [#box(width: 30mm, height: 1em, fill: css("Maroon"))]
-    )
-    ```
+  #grid(
+    columns: 3,
+    rows: 2,
+    row-gutter: 10pt,
+    column-gutter: 10pt,
+    [Typst maroon], [#color.maroon.to-hex()], [#box(width: 30mm, height: 1em, fill: maroon)],
+    [CSS maroon], [#css("Maroon").to-hex()], [#box(width: 30mm, height: 1em, fill: css("Maroon"))]
+  )
+  ```
 
   #grid(
     columns: 3,
@@ -194,18 +194,18 @@ The following examples demonstrate the usage of the `css` function in various ca
 
 + CSS colors may also be used in the context of drawing and data visualization.
 
-  ```
-    #import "@preview/css-colors:0.1.0": *
+  ```typ
+  #import "@preview/css-colors:0.1.0": *
 
-    #align(center)[
-      #polygon.regular(
-        fill: css("darkgoldenrod").lighten(60%),
-        stroke: (paint: css("darkgoldenrod"), thickness: 4pt, cap: "round"),
-        size: 80mm,
-        vertices: 6,
-      )
-    ]
-    ```
+  #align(center)[
+    #polygon.regular(
+      fill: css("darkgoldenrod").lighten(60%),
+      stroke: (paint: css("darkgoldenrod"), thickness: 4pt, cap: "round"),
+      size: 80mm,
+      vertices: 6,
+    )
+  ]
+  ```
 
   #align(center)[
     #polygon.regular(
@@ -219,19 +219,23 @@ The following examples demonstrate the usage of the `css` function in various ca
 + CSS colors may be used to underline text with a line of default thickness. The
   thickness of the underline may be changed manually if desired.
 
+  ```typ
+  #import "@preview/css-colors:0.1.0": *
+
+  This is #underline(stroke: css("teal"))[important.]
+
+  This is #underline(stroke: (paint: css("teal"), thickness: 2pt))[important.]
   ```
-    #import "@preview/css-colors:0.1.0": *
-
-    This is #underline(stroke: css("teal"))[important.]
-
-    This is #underline(stroke: (paint: css("teal"), thickness: 2pt))[important.]
-    ```
 
   This is #underline(stroke: css("teal"))[important.]
 
   This is #underline(stroke: (paint: css("teal"), thickness: 2pt))[important.]
 
-== Appendix
+#bibliography("manual.yml", title: "References", style: "ieee")
+
+#pagebreak()
+
+= Appendix 1
 
 #figure(
   align(center)[
@@ -251,6 +255,10 @@ The following examples demonstrate the usage of the `css` function in various ca
   ], caption: [CSS colors sharing the same hex value],
 ) <css-colors-sharing-hex-value>
 
+#pagebreak()
+
+= Appendix 2
+
 #figure(
   align(center)[
     #table(
@@ -269,6 +277,10 @@ The following examples demonstrate the usage of the `css` function in various ca
     )
   ], caption: [Comparison of Typst and CSS colors],
 ) <comparison-typst-css-colors>
+
+#pagebreak()
+
+= Appendix 3
 
 #figure(align(center)[
     #table(
@@ -383,4 +395,4 @@ The following examples demonstrate the usage of the `css` function in various ca
   ], caption: [Available CSS colors],
 ) <available-css-colors>
 
-#bibliography("manual.yml", title: "References", style: "ieee")
+#pagebreak()
