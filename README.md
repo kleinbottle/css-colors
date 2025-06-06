@@ -1,4 +1,5 @@
 # The `css-colors` Package
+ <!-- markdownlint-disable MD033 -->
 <div align="center">Version 0.1.0</div>
 
 Allows CSS/SVG named colors to be used directly in a Typst document.
@@ -27,7 +28,7 @@ Allows CSS/SVG named colors to be used directly in a Typst document.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on the typst web app.
+These instructions will get you a copy of the project up and running on the Typst web app.
 
 ```typ
 #import "@preview/css-colors:0.1.0": *
@@ -37,7 +38,7 @@ Normal text may be #text(fill: css("crimson"))[colored so.]
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./thumbnail-dark.svg">
-  <img src="./thumbnail-light.svg">
+  <img src="./thumbnail-light.svg" alt="">
 </picture>
 
 ## Installation
@@ -82,23 +83,23 @@ just test
 
 Ensure that all tests pass before submitting any changes to maintain the project's integrity.
 
-If you want to test the module with a typst file, you can install the `css-colors` package locally in the `preview` location by running:
+If you want to test the module with a Typst file, you can install the `css-colors` package locally in the `preview` location by running:
 
 ```bash
 just install-preview
 ```
 
-Once installed, you can import the module into your typst file using the following statement:
+Once installed, you can import the package into your Typst file using the following statement:
 
 ```typ
 #import "@preview/css-colors:0.1.0": *
 ```
 
-This setup allows you to experiment with the module in a typst file before finalizing your changes.
+This setup allows you to experiment with the module in a Typst file before finalizing your changes.
 
 ## Usage
 
-Here are some examples demonstrating how to use the `css-colors` module:
+The following examples demonstrate the usage of the `css-colors` package in various cases:
 
 ```typ
 #import "@preview/css-colors:0.1.0": *

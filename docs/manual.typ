@@ -5,7 +5,7 @@
 #set par(spacing: 1.5em)
 
 //Customize appearance
-#show raw: set text(font: "Fira Mono", size: 11pt)
+#show raw: set text(font: "Fira Mono", size: 1.2em)
 #show raw.where(block: true): set block(fill: css("AntiqueWhite"), inset: 1em, radius: 0.5em, width: 100%)
 #show link: set text(fill: blue, font: "Source Sans Pro", size: 12pt)
 #show ref: set text(fill: blue, font: "Source Sans Pro", size: 12pt)
@@ -36,7 +36,7 @@
 
 // End of setup
 
-= CSS Colors Module
+= The `css-colors` Package
 
 == History
 
@@ -81,9 +81,9 @@ The CSS Level 1 colors introduced in 1996 specified these same sixteen colors, w
 === SVG/CSS colors
 
 Finally, the #link("https://www.w3.org/TR/SVG11/types.html#ColorKeywords")[SVG 1.1 Specification] of 2011 #cite(<SVG11>) and the #link("https://www.w3.org/TR/css-color-3/#html4")[CSS Color Module Level 3] #cite(<CSS3>) of
-2022 have standardized on a list of 147 color names, known as the "recognized color keyword names" or the "extended color keywords" respectively. They include the original 16 colors, augmented by `orange`, and additional colors from the X11 set. These colors---common to both the CSS and SVG standards---are referred to as the CSS Colors in this manual and module.
+2022 have standardized on a list of 147 color names, known as the "recognized color keyword names" or the "extended color keywords" respectively. They include the original 16 colors, augmented by `orange`, and additional colors from the X11 set. These colors---common to both the CSS and SVG standards---are referred to as the CSS colors in this manual and package.
 
-This standardization aims to provide a consistent color naming scheme across the Web, and has remained relatively stable. It is this set of color names that forms the basis for this module. How the CSS colors were given their rather idiosyncratic names is explained in a lighthearted but factual fashion by Alex Sexton in this #link("https://www.youtube.com/watch?v=HmStJQzclHc")[this You Tube video] #cite(<CSShistory>).
+This standardization aims to provide a consistent color naming scheme across the Web, and has remained relatively stable. It is this set of color names that forms the basis for this package. How the CSS colors were given their rather idiosyncratic names is explained in a lighthearted but factual fashion by Alex Sexton in this #link("https://www.youtube.com/watch?v=HmStJQzclHc")[this You Tube video] #cite(<CSShistory>).
 
 There are 147 "recognized CSS color keyword names" all of which are unique. But of these, only 138 have unique Hex values. This means that there are nine pairs of named colors that share the same hex value as shown in @css-colors-sharing-hex-value.
 
@@ -94,9 +94,9 @@ Typst ships with #link("https://typst.app/docs/reference/visualize/color/#predef
 The remaining seventeen colors have identical names, but---with the exception of `white` and `black`---they
 have different RGB/Hex values, as shown in @comparison-typst-css-colors.
 
-== Purpose of Module
+== Purpose of Package
 
-The CSS Colors Module is a robust convenience which allows #link("https://www.w3.org/TR/css-color-3/#svg-color")[CSS/SVG colors] to be used by their names within a Typst file, rather than by their RGB/Hex codes, which have to be looked up.
+The `css-colors` package is a robust convenience which allows #link("https://www.w3.org/TR/css-color-3/#svg-color")[CSS/SVG colors] to be used by their names within a Typst file, rather than by their RGB/Hex codes, which have to be looked up.
 
 == Easy Reference
 
@@ -108,7 +108,7 @@ You may also view them in a browser by clicking on this #link("https://htmlprevi
 
 === Function
 
-The CSS Colors Module provides a function `css` defined as:
+The `css-colors` package provides a single function `css` defined as:
 
 ```typ
 css(
@@ -132,9 +132,9 @@ Since the returned value is of type `color`, it can be used with any of Typst's 
 
 == Usage
 
-The following examples demonstrate the usage of the CSS colors module in various cases:
+The following examples demonstrate the usage of the `css-colors` package in various cases:
 
-+ Coloring text.
++ Coloring text with a CSS color.
 
   ```typ
   #import "@preview/css-colors:0.1.0": *
@@ -144,7 +144,7 @@ The following examples demonstrate the usage of the CSS colors module in various
 
   Normal text may be #text(fill: css("crimson"))[colored so.]
 
-+ A rectangle may be colored with `fill`.
++ Filling a rectangle with a CSS color.
 
   ```typ
   #import "@preview/css-colors:0.1.0": *
@@ -154,7 +154,7 @@ The following examples demonstrate the usage of the CSS colors module in various
 
   #rect(width: 100%, height: auto, fill: css("darkorchid"))
 
-+ CSS colors may be specified in either lowercase or CamelCase.
++ CSS color names are case-insensitive so both `saddlebrown` and `SaddleBrown` are valid.
 
   ```typ
   #import "@preview/css-colors:0.1.0": *
@@ -168,7 +168,7 @@ The following examples demonstrate the usage of the CSS colors module in various
 
   (b) SaddleBrown: #box(width: 30mm, height: 1em, fill: css("SaddleBrown"))
 
-+ The maroon color in Typst differs from the Maroon color defined in CSS, as evidenced by their distinct hex codes.  To emphasize this distinction, the CSS `Maroon` is intentionally capitalized with an initial uppercase letter.
++ The maroon color in Typst differs from the Maroon color defined in CSS, as evidenced by their distinct hex codes. To emphasize this distinction, the CSS `Maroon` is intentionally capitalized with an initial uppercase letter.
 
   ```typ
   #import "@preview/css-colors:0.1.0": *
@@ -211,13 +211,12 @@ The following examples demonstrate the usage of the CSS colors module in various
     #polygon.regular(
       fill: css("darkgoldenrod").lighten(60%),
       stroke: (paint: css("darkgoldenrod"), thickness: 4pt, cap: "round"),
-      size: 80mm,
+      size: 60mm,
       vertices: 6,
     )
   ]
 
-+ CSS colors may be used to underline text with a line of default thickness. The
-  thickness of the underline may be changed manually if desired.
++ CSS colors may be used to underline text.
 
   ```typ
   #import "@preview/css-colors:0.1.0": *
@@ -244,7 +243,7 @@ The following examples demonstrate the usage of the CSS colors module in various
       inset: 10pt,
       stroke: none,
       align: (center + horizon, center + horizon, center + horizon),
-      table.header([Color Names], [Hex Value], [Swatch]),
+      table.header([Aliased Color Names], [Hex Value], [Swatch]),
       [aqua \ cyan], [`#00ffff`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#00ffff"))],
       [darkgray \ darkgrey], [`#a9a9a9`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#a9a9a9"))], [darkslategray \ darkslategrey], [`#2f4f4f`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#2f4f4f"))],
       [dimgray \ dimgrey], [`#696969`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#696969"))], [fuchsia \ magenta], [`#ff00ff`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ff00ff"))],
@@ -252,7 +251,7 @@ The following examples demonstrate the usage of the CSS colors module in various
       [lightgray \ lightgrey], [`#d3d3d3`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#d3d3d3"))], [lightslategray \ lightslategrey], [`#778899`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#778899"))],
       [slategray \ slategrey], [`#708090`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#708090"))],
     )
-  ], caption: [CSS colors sharing the same hex value],
+  ], caption: [CSS colors sharing the same hex value.],
 ) <css-colors-sharing-hex-value>
 
 #pagebreak()
@@ -275,7 +274,7 @@ The following examples demonstrate the usage of the CSS colors module in various
       [red], [#text(font: "Fira Mono", size: 11pt)[#color.red.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(red))], [`#ff0000`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ff0000"))], [silver], [#text(font: "Fira Mono", size: 11pt)[#color.silver.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(silver))], [`#c0c0c0`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#c0c0c0"))],
       [teal], [#text(font: "Fira Mono", size: 11pt)[#color.teal.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(teal))], [`#008080`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#008080"))], [white], [#text(font: "Fira Mono", size: 11pt)[#color.white.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(white))], [`#ffffff`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffffff"))], [yellow], [#text(font: "Fira Mono", size: 11pt)[#color.yellow.to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb(yellow))], [`#ffff00`], [#box(width: 1cm, height: 1cm, stroke: black, fill: rgb("#ffff00"))],
     )
-  ], caption: [Comparison of Typst and CSS colors],
+  ], caption: [Comparison of Typst and CSS colors.],
 ) <comparison-typst-css-colors>
 
 #pagebreak()
@@ -392,5 +391,5 @@ The following examples demonstrate the usage of the CSS colors module in various
       [violet], [#text(font: "Fira Mono", size: 11pt)[#css("violet").to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: css("violet"))], [#box(width: 5cm, height: 1cm, stroke: none, fill: css("violet"))], [wheat], [#text(font: "Fira Mono", size: 11pt)[#css("wheat").to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: css("wheat"))], [#box(width: 5cm, height: 1cm, stroke: none, fill: css("wheat"))], [white], [#text(font: "Fira Mono", size: 11pt)[#css("white").to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: css("white"))], [#box(width: 5cm, height: 1cm, stroke: none, fill: css("white"))], [whitesmoke], [#text(font: "Fira Mono", size: 11pt)[#css("whitesmoke").to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: css("whitesmoke"))], [#box(width: 5cm, height: 1cm, stroke: none, fill: css("whitesmoke"))],
       [yellow], [#text(font: "Fira Mono", size: 11pt)[#css("yellow").to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: css("yellow"))], [#box(width: 5cm, height: 1cm, stroke: none, fill: css("yellow"))], [yellowgreen], [#text(font: "Fira Mono", size: 11pt)[#css("yellowgreen").to-hex()]], [#box(width: 1cm, height: 1cm, stroke: black, fill: css("yellowgreen"))], [#box(width: 5cm, height: 1cm, stroke: none, fill: css("yellowgreen"))],
     )
-  ], caption: [Available CSS colors],
+  ], caption: [Available CSS colors.],
 ) <available-css-colors>
