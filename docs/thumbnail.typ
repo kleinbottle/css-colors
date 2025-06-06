@@ -7,5 +7,4 @@
 #set text(white) if theme == "dark"
 
 #set text(22pt)
-Normal text may be #text(fill: css("crimson"))[colored so.]
-#align(center)[_a thumbnail showing the package's output_]
+#align(center)[Normal text may be #text(fill: css("crimson"))[colored so.]]
