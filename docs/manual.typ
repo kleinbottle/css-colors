@@ -102,7 +102,7 @@ The `css-colors` package is a robust convenience which allows #link("https://www
 
 For easy reference the CSS color names, their RGB/Hex codes, color swatches, and color stripes have been tabulated in @available-css-colors.
 
-You may also view them in a browser by clicking on this #link("https://htmlpreview.github.io/?https://github.com/kleinbottle/css-colors/blob/main/docs/css-colors-table.html")[link].
+You may also view them in a browser by clicking on this #link("https://htmlpreview.github.io/?https://github.com/nandac/css-colors/blob/main/docs/css-colors-table.html")[link].
 
 == Implementation
 

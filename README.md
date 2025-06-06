@@ -36,7 +36,7 @@ Follow these steps to set up your development environment and prepare for contri
    Download the project's source code by cloning the repository to your local machine:
 
     ```bash
-    git clone https://github.com/kleinbottle/css-colors.git
+    git clone https://github.com/nandac/css-colors.git
     ```
 
 Once you've completed these steps, your development environment will be ready.

@@ -4,11 +4,11 @@
 name = "css-colors"
 version = "0.1.0"
 entrypoint = "src/css-colors.typ"
-authors = ["kleinbottle", "nandac"]
+authors = ["nandac"]
 license = "Unlicense"
 description = "Allows CSS named colors to be used directly in a Typst document"
 # homepage = ""
-repository = "https://github.com/kleinbottle/css-colors"
+repository = "https://github.com/nandac/css-colors"
 keywords = ["named CSS colors"]
 categories = ["components"]
 disciplines = ["design", "drawing"]
@@ -22,12 +22,6 @@ exclude = [
   "Justfile",
   "thumbnail-dark.svg",
   "thumbnail-light.svg",
+  "thumbnail-2-dark.svg",
+  "thumbnail-2-light.svg",
 ]
-
-# [template]
-# path = "template"
-# entrypoint = "main.typ"
-# thumbnail = "thumbnail.png"
-
-# [tool.mytool]
-# foo = "bar"
