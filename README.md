@@ -104,22 +104,23 @@ The following examples demonstrate the usage of the `css-colors` package in vari
 ```typ
 #import "@preview/css-colors:0.1.0": *
 
-(a) saddlebrown: #box(width: 30mm, height: 1em, fill: css("saddlebrown"))
-
-(b) SaddleBrown: #box(width: 30mm, height: 1em, fill: css("SaddleBrown"))
-
 #align(center)[
   #polygon.regular(
     fill: css("darkgoldenrod").lighten(60%),
     stroke: (paint: css("darkgoldenrod"), thickness: 4pt, cap: "round"),
-    size: 80mm,
+    size: 60mm,
     vertices: 6,
   )
 ]
 ```
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./thumbnail-2-dark.svg">
+  <img src="./thumbnail-2-light.svg" alt="">
+</picture>
+
 For additional examples, detailed explanations and the actual PDF output refer to the project manual.
 
 ## Acknowledgments
 
-We would like to thank the Typst community on Discord for giving invaluable support during the development of this package.
+I would like to thank the Typst community on [Discord](https://discord.com/channels/1054443721975922748/1069937650125000807) for giving invaluable support during the development of this package.

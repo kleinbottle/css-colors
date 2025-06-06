@@ -154,7 +154,7 @@ The following examples demonstrate the usage of the `css-colors` package in vari
 
   #rect(width: 100%, height: auto, fill: css("darkorchid"))
 
-+ CSS color names are case-insensitive so both `saddlebrown` and `SaddleBrown` are valid.
++ CSS color names can be specified in lowercase or CamelCase so both `saddlebrown` and `SaddleBrown` are valid.
 
   ```typ
   #import "@preview/css-colors:0.1.0": *
@@ -201,7 +201,7 @@ The following examples demonstrate the usage of the `css-colors` package in vari
     #polygon.regular(
       fill: css("darkgoldenrod").lighten(60%),
       stroke: (paint: css("darkgoldenrod"), thickness: 4pt, cap: "round"),
-      size: 80mm,
+      size: 60mm,
       vertices: 6,
     )
   ]
