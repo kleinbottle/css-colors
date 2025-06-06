@@ -4,28 +4,6 @@
 
 Allows CSS/SVG named colors to be used directly in a Typst document.
 
-## Template adaptation checklist
-
-- [x] Fill out `README.md`
-  - Change the `my-package` package name, including code snippets
-  - Check section contents and/or delete sections that don't apply
-- [x] Check and/or replace `LICENSE` by something that suits your needs
-- [x] Fill out `typst.toml`
-  - See also the [typst/packages README](https://github.com/typst/packages/?tab=readme-ov-file#package-format)
-- [x] Adapt Repository URLs in `CHANGELOG.md`
-  - Consider only committing that file with your first release, or removing the "Initial Release" part in the beginning
-- [ ] Adapt or deactivate the release workflow in `.github/workflows/release.yml`
-  - to deactivate it, delete that file or remove/comment out lines 2-4 (`on:` and following)
-  - to use the workflow
-    - [ ] check the values under `env:`, particularly `REGISTRY_REPO`
-    - [ ] if you don't have one, [create a fine-grained personal access token](https://github.com/settings/tokens?type=beta) with [only Contents permission](https://stackoverflow.com/a/75116350/371191) for the `REGISTRY_REPO`
-    - [ ] on this repo, create a secret `REGISTRY_TOKEN` (at `https://github.com/[user]/[repo]/settings/secrets/actions`) that contains the so created token
-
-    if configured correctly, whenever you create a tag `v...`, your package will be pushed onto a branch on the `REGISTRY_REPO`, from which you can then create a pull request against [typst/packages](https://github.com/typst/packages/)
-- [x] remove/replace the example test case
-- [x] (add your actual code, docs and tests)
-- [ ] remove this section from the README
-
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on the Typst web app.
@@ -119,8 +97,8 @@ The following examples demonstrate the usage of the `css-colors` package in vari
   <img src="./thumbnail-2-light.svg" alt="">
 </picture>
 
-For additional examples, detailed explanations and the actual PDF output refer to the project manual.
+For more examples, in-depth explanations, and the PDF output, please refer to the project manual.
 
 ## Acknowledgments
 
-I would like to thank the Typst community on [Discord](https://discord.com/channels/1054443721975922748/1069937650125000807) for giving invaluable support during the development of this package.
+Special thanks to the Typst community on [Discord](https://discord.com/channels/1054443721975922748/1069937650125000807) for their invaluable assistance and support during the development of this package.
