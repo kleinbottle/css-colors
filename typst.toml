@@ -18,6 +18,7 @@ exclude = [
   "docs",
   "scripts",
   "tests",
+  ".gitignore",
   ".typstignore",
   "Justfile",
   "thumbnail-dark.svg",
