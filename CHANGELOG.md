@@ -37,5 +37,5 @@ to the corresponding tag on GitHub, or the diff
 in comparison to the previous release
 -->
 
-[Unreleased]: https://github.com/nandac/css-colors/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/nandac/css-colors/releases/tag/v0.1.0
+[Unreleased]: https://github.com/nandac/niram-css/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/nandac/niram-css/releases/tag/v0.1.0

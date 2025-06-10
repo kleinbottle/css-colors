@@ -1,4 +1,4 @@
-#import "/src/css-colors.typ": *
+#import "/src/niram-css.typ": *
 
 #assert.eq(
   catch(() => css("invalidcolor")),

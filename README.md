@@ -1,4 +1,4 @@
-# The `css-colors` Package
+# The `niram-css` Package
  <!-- markdownlint-disable MD033 -->
 <div align="center">Version 0.1.0</div>
 
@@ -9,7 +9,7 @@ Allows CSS/SVG named colors to be used directly in a Typst document.
 These instructions will get you a copy of the project up and running on the Typst web app.
 
 ```typ
-#import "@preview/css-colors:0.1.0": *
+#import "@preview/niram-css:0.1.0": *
 
 Normal text may be #text(fill: css("crimson"))[colored so.]
 ```
@@ -36,17 +36,17 @@ Follow these steps to set up your development environment and prepare for contri
    Download the project's source code by cloning the repository to your local machine:
 
     ```bash
-    git clone https://github.com/nandac/css-colors.git
+    git clone https://github.com/nandac/niram-css.git
     ```
 
 Once you've completed these steps, your development environment will be ready.
 
 ### Next Steps
 
-The `css-colors` package source code is located at:
+The `niram-css` package source code is located at:
 
 ```plaintext
-src/css-colors.typ
+src/niram-css.typ
 ```
 
 This is where you will make any necessary changes to the module.
@@ -61,7 +61,7 @@ just test
 
 Ensure that all tests pass before submitting any changes to maintain the project's integrity.
 
-If you want to test the module with a Typst file, you can install the `css-colors` package locally in the `preview` location by running:
+If you want to test the module with a Typst file, you can install the `niram-css` package locally in the `preview` location by running:
 
 ```bash
 just install-preview
@@ -70,17 +70,17 @@ just install-preview
 Once installed, you can import the package into your Typst file using the following statement:
 
 ```typ
-#import "@preview/css-colors:0.1.0": *
+#import "@preview/niram-css:0.1.0": *
 ```
 
 This setup allows you to experiment with the module in a Typst file before finalizing your changes.
 
 ## Usage
 
-The following examples demonstrate the usage of the `css-colors` package in various cases:
+The following examples demonstrate the usage of the `niram-css` package in various cases:
 
 ```typ
-#import "@preview/css-colors:0.1.0": *
+#import "@preview/niram-css:0.1.0": *
 
 #align(center)[
   #polygon.regular(

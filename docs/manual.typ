@@ -1,4 +1,4 @@
-#import "@preview/css-colors:0.1.0": *
+#import "@preview/niram-css:0.1.0": *
 // Global Styles
 #set page(margin: 25mm)
 #set text(size: 11pt, font: "Noto Serif")
@@ -36,7 +36,7 @@
 
 // End of setup
 
-= The `css-colors` Package
+= The `niram-css` Package
 
 == History
 
@@ -94,21 +94,23 @@ Typst ships with #link("https://typst.app/docs/reference/visualize/color/#predef
 The remaining seventeen colors have identical names, but---with the exception of `white` and `black`---they
 have different RGB/Hex values, as shown in @comparison-typst-css-colors.
 
-== Purpose of Package
+== Purpose of the `niram-css` Package
 
-The `css-colors` package is a robust convenience which allows #link("https://www.w3.org/TR/css-color-3/#svg-color")[CSS/SVG colors] to be used by their names within a Typst file, rather than by their RGB/Hex codes, which have to be looked up.
+The `niram-css` package offers a convenient and powerful way to use #link("https://www.w3.org/TR/css-color-3/#svg-color")[CSS/SVG colors] directly within Typst documents. Instead of manually looking up and entering RGB or Hex codes, users can simply refer to colors by their CSS names.
+
+The word _niram_ (நிறம்), means "color" in #link("https://en.wikipedia.org/wiki/Tamil_language")[Tamil] and reflects the package's focus on colors.
 
 == Easy Reference
 
 For easy reference the CSS color names, their RGB/Hex codes, color swatches, and color stripes have been tabulated in @available-css-colors.
 
-You may also view them in a browser by clicking on this #link("https://htmlpreview.github.io/?https://github.com/nandac/css-colors/blob/main/docs/css-colors-table.html")[link].
+You may also view them in a browser by clicking on this #link("https://htmlpreview.github.io/?https://github.com/nandac/css-colors/blob/main/docs/niram-css-table.html")[link].
 
 == Implementation
 
 === Function
 
-The `css-colors` package provides a single function `css` defined as:
+The `niram-css` package provides a single function `css` defined as:
 
 ```typ
 css(
@@ -132,12 +134,12 @@ Since the returned value is of type `color`, it can be used with any of Typst's 
 
 == Usage
 
-The following examples demonstrate the usage of the `css-colors` package in various cases:
+The following examples demonstrate the usage of the `niram-css` package in various cases:
 
 + Coloring text with a CSS color.
 
   ```typ
-  #import "@preview/css-colors:0.1.0": *
+  #import "@preview/niram-css:0.1.0": *
 
   Normal text may be #text(fill: css("crimson"))[colored so.]
   ```
@@ -147,7 +149,7 @@ The following examples demonstrate the usage of the `css-colors` package in vari
 + Filling a rectangle with a CSS color.
 
   ```typ
-  #import "@preview/css-colors:0.1.0": *
+  #import "@preview/niram-css:0.1.0": *
 
   #rect(width: 100%, height: auto, fill: css("darkorchid"))
   ```
@@ -157,7 +159,7 @@ The following examples demonstrate the usage of the `css-colors` package in vari
 + CSS color names can be specified in lowercase or CamelCase so both `saddlebrown` and `SaddleBrown` are valid.
 
   ```typ
-  #import "@preview/css-colors:0.1.0": *
+  #import "@preview/niram-css:0.1.0": *
 
   (a) saddlebrown: #box(width: 30mm, height: 1em, fill: css("saddlebrown"))
 
@@ -171,7 +173,7 @@ The following examples demonstrate the usage of the `css-colors` package in vari
 + The maroon color in Typst differs from the Maroon color defined in CSS, as evidenced by their distinct hex codes. To emphasize this distinction, the CSS `Maroon` is intentionally capitalized with an initial uppercase letter.
 
   ```typ
-  #import "@preview/css-colors:0.1.0": *
+  #import "@preview/niram-css:0.1.0": *
 
   #grid(
     columns: 3,
@@ -195,7 +197,7 @@ The following examples demonstrate the usage of the `css-colors` package in vari
 + CSS colors may also be used in the context of drawing and data visualization.
 
   ```typ
-  #import "@preview/css-colors:0.1.0": *
+  #import "@preview/niram-css:0.1.0": *
 
   #align(center)[
     #polygon.regular(
@@ -219,7 +221,7 @@ The following examples demonstrate the usage of the `css-colors` package in vari
 + CSS colors may be used to underline text.
 
   ```typ
-  #import "@preview/css-colors:0.1.0": *
+  #import "@preview/niram-css:0.1.0": *
 
   This is #underline(stroke: css("teal"))[important.]
 
