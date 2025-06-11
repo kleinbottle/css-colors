@@ -96,13 +96,13 @@ have different RGB/Hex values, as shown in @comparison-typst-css-colors.
 
 == Purpose of the `niram-css` Package
 
-The `niram-css` package offers a convenient and powerful way to use #link("https://www.w3.org/TR/css-color-3/#svg-color")[CSS/SVG colors] directly within Typst documents. Instead of manually looking up and entering RGB or Hex codes, users can simply refer to colors by their CSS names.
+The `niram-css` package provides a convenient solution for using any of the 147 CSS color names directly in Typst documents instead of entering their RGB or Hex values.
 
 The word _niram_ (நிறம்), means "color" in #link("https://en.wikipedia.org/wiki/Tamil_language")[Tamil] and reflects the package's focus on colors.
 
 == Easy Reference
 
-For easy reference the CSS color names, their RGB/Hex codes, color swatches, and color stripes have been tabulated in @available-css-colors.
+For easy reference the CSS colors, their RGB/Hex codes, color swatches, and color stripes have been tabulated in @available-css-colors.
 
 You may also view them in a browser by clicking on this #link("https://htmlpreview.github.io/?https://github.com/nandac/css-colors/blob/main/docs/niram-css-table.html")[link].
 
